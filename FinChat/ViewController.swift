@@ -9,41 +9,52 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(#function)
+        logging()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        print(#function)
+        logging()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-        print(#function)
+        logging()
     }
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-        print(#function)
+        logging()
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        print(#function)
+        logging()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(true)
-        print(#function)
+        logging()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(true)
-        print(#function)
+        logging()
     }
 
 }
 
+extension UIViewController {
+    func logging(_ function: String = #function) {
+        guard
+            let appDelegate = UIApplication.shared.delegate as? AppDelegate,
+            appDelegate.loggingOn
+            else {
+                return
+        }
+        print(function)
+    }
+}

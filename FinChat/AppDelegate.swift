@@ -13,19 +13,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     
-    struct Stack {
-        var array: [String] = []
-        mutating func push(_ element: String) {
-            array.append(element)
-        }
-        mutating func pop() -> String? {
-            return array.popLast()
-        }
-    }
+    var state: String = ""
     
-    var state = Stack()
-    
-    func temporaryState() -> String {
+    var temporaryState: String {
         switch UIApplication.shared.applicationState {
         case .active:
             return "UIApplicationStateActive"
@@ -39,64 +29,44 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return ""
     }
     
-    let logging: Bool = true
+    let loggingOn: Bool = true
+    
+    func logging(_ function: String = #function) {
+        if loggingOn {
+            print("From \(state) to \(temporaryState)")
+            state = temporaryState
+            print(function)
+        }
+    }
 
     func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
-        if logging {
-            print("From \(state.pop() ?? " ") to \(self.temporaryState())")
-            state.push(self.temporaryState())
-            print(#function)
-        }
+        logging()
         return true
     }
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        if logging {
-            print("From \(state.pop() ?? " ") to \(self.temporaryState())")
-            state.push(self.temporaryState())
-            print(#function)
-        }
+        logging()
         return true
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
-        if logging {
-            print("From \(state.pop() ?? " ") to \(self.temporaryState())")
-            state.push(self.temporaryState())
-            print(#function)
-        }
+        logging()
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {
-        if logging {
-            print("From \(state.pop() ?? " ") to \(self.temporaryState())")
-            state.push(self.temporaryState())
-            print(#function)
-        }
+        logging()
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
-        if logging {
-            print("From \(state.pop() ?? " ") to \(self.temporaryState())")
-            state.push(self.temporaryState())
-            print(#function)
-        }
+        logging()
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
-        if logging {
-            print("From \(state.pop() ?? " ") to \(self.temporaryState())")
-            state.push(self.temporaryState())
-            print(#function)
-        }
+        logging()
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
-        if logging {
-            print("From \(state.pop() ?? " ") to \(self.temporaryState())")
-            state.push(self.temporaryState())
-            print(#function)
-        }
+        logging()
     }
 
 
