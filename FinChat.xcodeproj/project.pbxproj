@@ -8,20 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		301EC570220CC520003BEDEF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301EC56F220CC520003BEDEF /* AppDelegate.swift */; };
-		301EC572220CC520003BEDEF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301EC571220CC520003BEDEF /* ViewController.swift */; };
+		301EC572220CC520003BEDEF /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301EC571220CC520003BEDEF /* ProfileViewController.swift */; };
 		301EC575220CC520003BEDEF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 301EC573220CC520003BEDEF /* Main.storyboard */; };
 		301EC577220CC522003BEDEF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 301EC576220CC522003BEDEF /* Assets.xcassets */; };
 		301EC57A220CC522003BEDEF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 301EC578220CC522003BEDEF /* LaunchScreen.storyboard */; };
+		30C32D1B221973DF003DBC00 /* UIButton+IBDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C32D1A221973DF003DBC00 /* UIButton+IBDesignable.swift */; };
+		30C32D1D2219752D003DBC00 /* UIImageView+IBDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C32D1C2219752D003DBC00 /* UIImageView+IBDesignable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		301EC56C220CC520003BEDEF /* FinChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		301EC56F220CC520003BEDEF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		301EC571220CC520003BEDEF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		301EC571220CC520003BEDEF /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		301EC574220CC520003BEDEF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		301EC576220CC522003BEDEF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		301EC579220CC522003BEDEF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		301EC57B220CC522003BEDEF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		30C32D1A221973DF003DBC00 /* UIButton+IBDesignable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+IBDesignable.swift"; sourceTree = "<group>"; };
+		30C32D1C2219752D003DBC00 /* UIImageView+IBDesignable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+IBDesignable.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +58,24 @@
 		301EC56E220CC520003BEDEF /* FinChat */ = {
 			isa = PBXGroup;
 			children = (
+				30C32D1922197378003DBC00 /* Extensions */,
 				301EC56F220CC520003BEDEF /* AppDelegate.swift */,
-				301EC571220CC520003BEDEF /* ViewController.swift */,
+				301EC571220CC520003BEDEF /* ProfileViewController.swift */,
 				301EC573220CC520003BEDEF /* Main.storyboard */,
 				301EC576220CC522003BEDEF /* Assets.xcassets */,
 				301EC578220CC522003BEDEF /* LaunchScreen.storyboard */,
 				301EC57B220CC522003BEDEF /* Info.plist */,
 			);
 			path = FinChat;
+			sourceTree = "<group>";
+		};
+		30C32D1922197378003DBC00 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				30C32D1A221973DF003DBC00 /* UIButton+IBDesignable.swift */,
+				30C32D1C2219752D003DBC00 /* UIImageView+IBDesignable.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,8 +149,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				301EC572220CC520003BEDEF /* ViewController.swift in Sources */,
+				301EC572220CC520003BEDEF /* ProfileViewController.swift in Sources */,
+				30C32D1D2219752D003DBC00 /* UIImageView+IBDesignable.swift in Sources */,
 				301EC570220CC520003BEDEF /* AppDelegate.swift in Sources */,
+				30C32D1B221973DF003DBC00 /* UIButton+IBDesignable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

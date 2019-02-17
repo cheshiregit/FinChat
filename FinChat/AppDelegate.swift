@@ -29,7 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return ""
     }
     
-    let loggingOn: Bool = true
+    let loggingOn: Bool = false
     
     func logging(_ function: String = #function) {
         if loggingOn {
