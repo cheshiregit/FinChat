@@ -14,7 +14,6 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var userProfileLabel: UILabel!
     @IBOutlet weak var editButton: UIButton!
-    @IBOutlet weak var newImageView: UIView!
     @IBOutlet weak var newImageButton: UIButton!
     
     @IBAction func clickNewImageButton(_ sender: Any) {
@@ -45,9 +44,10 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     override func viewDidLoad() {
         super.viewDidLoad()
         isLogging()
-        newImageView.layer.cornerRadius = newImageView.frame.size.width / 2
         userImage.layer.cornerRadius = 50
         userImage.clipsToBounds = true
+        newImageButton.layer.cornerRadius = newImageButton.frame.size.width / 2
+        newImageButton.clipsToBounds = true
         imagePicker.delegate = self
         print("ViewDidLoad Frame кнопки 'Редактировать': \(editButton.frame)")
         //Здесь контроллер загрузился в память, у элементов, в частности кнопки, есть начальная позиция (initial position)

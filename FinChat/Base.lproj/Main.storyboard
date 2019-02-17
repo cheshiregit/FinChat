@@ -69,40 +69,41 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FXE-zx-maz">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DIq-LM-uEx">
                                 <rect key="frame" x="224" y="236" width="80" height="80"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DIq-LM-uEx">
-                                        <rect key="frame" x="15" y="15" width="50" height="50"/>
-                                        <state key="normal" title="Button" image="slr-camera-2-xxl"/>
-                                        <connections>
-                                            <action selector="clickNewImageButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="O49-ir-8eu"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
                                 <color key="backgroundColor" red="0.20383259654045105" green="0.46357297897338867" blue="0.97398728132247925" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="80" id="OQy-jI-Xc8"/>
-                                    <constraint firstAttribute="height" constant="80" id="W99-Mq-vgR"/>
-                                    <constraint firstAttribute="trailing" secondItem="DIq-LM-uEx" secondAttribute="trailing" constant="15" id="bzD-3G-tBE"/>
-                                    <constraint firstAttribute="bottom" secondItem="DIq-LM-uEx" secondAttribute="bottom" constant="15" id="fdl-wj-e3I"/>
-                                    <constraint firstItem="DIq-LM-uEx" firstAttribute="top" secondItem="FXE-zx-maz" secondAttribute="top" constant="15" id="gKZ-XC-bMk"/>
-                                    <constraint firstItem="DIq-LM-uEx" firstAttribute="leading" secondItem="FXE-zx-maz" secondAttribute="leading" constant="15" id="qbc-bD-rUJ"/>
+                                    <constraint firstAttribute="width" secondItem="DIq-LM-uEx" secondAttribute="height" multiplier="1:1" id="N1D-zZ-d1h"/>
+                                    <constraint firstAttribute="height" constant="80" id="RFe-P4-DYt"/>
                                 </constraints>
-                            </view>
+                                <inset key="contentEdgeInsets" minX="16" minY="16" maxX="16" maxY="16"/>
+                                <state key="normal" title="Button" image="slr-camera-2-xxl"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="clickNewImageButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="O49-ir-8eu"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="4B8-sc-hFz" secondAttribute="bottom" constant="16" id="2Pa-U1-Rxv"/>
-                            <constraint firstItem="FXE-zx-maz" firstAttribute="bottom" secondItem="s4x-Fd-ChU" secondAttribute="bottom" id="6fy-KF-V0U"/>
                             <constraint firstItem="8hF-5h-fTm" firstAttribute="top" secondItem="LQi-6O-sCo" secondAttribute="bottom" constant="8" id="7vy-gB-bvu"/>
-                            <constraint firstItem="FXE-zx-maz" firstAttribute="trailing" secondItem="s4x-Fd-ChU" secondAttribute="trailing" id="Ebg-jQ-Xiq"/>
+                            <constraint firstItem="DIq-LM-uEx" firstAttribute="trailing" secondItem="LQi-6O-sCo" secondAttribute="trailing" id="RPL-XE-3Gf"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="s4x-Fd-ChU" secondAttribute="trailing" constant="16" id="SE1-FW-QZ8"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8hF-5h-fTm" secondAttribute="trailing" constant="16" id="VVw-n7-hG1"/>
+                            <constraint firstItem="DIq-LM-uEx" firstAttribute="bottom" secondItem="s4x-Fd-ChU" secondAttribute="bottom" id="X4x-9a-3Wb"/>
                             <constraint firstItem="8hF-5h-fTm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="ZVR-GM-BOR"/>
                             <constraint firstItem="LQi-6O-sCo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="ekk-Ul-wPW"/>
                             <constraint firstItem="LQi-6O-sCo" firstAttribute="top" secondItem="s4x-Fd-ChU" secondAttribute="bottom" constant="12" id="knd-Zd-3cX"/>
                             <constraint firstItem="s4x-Fd-ChU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="kqb-cJ-BP5"/>
+                            <constraint firstItem="DIq-LM-uEx" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" symbolic="YES" id="r7z-8s-Ysb"/>
                             <constraint firstItem="4B8-sc-hFz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="txo-0Y-LBf"/>
                             <constraint firstItem="s4x-Fd-ChU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="wRI-0M-coz"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4B8-sc-hFz" secondAttribute="trailing" constant="16" id="yHU-z4-srH"/>
@@ -114,7 +115,6 @@
                     <connections>
                         <outlet property="editButton" destination="4B8-sc-hFz" id="aFR-gs-t8W"/>
                         <outlet property="newImageButton" destination="DIq-LM-uEx" id="Ws0-XM-XUe"/>
-                        <outlet property="newImageView" destination="FXE-zx-maz" id="1bU-kE-QTR"/>
                         <outlet property="userImage" destination="s4x-Fd-ChU" id="DXl-xQ-ofD"/>
                         <outlet property="userNameLabel" destination="LQi-6O-sCo" id="0Qk-3b-4xU"/>
                         <outlet property="userProfileLabel" destination="8hF-5h-fTm" id="F9e-LJ-l9F"/>
