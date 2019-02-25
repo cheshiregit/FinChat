@@ -36,7 +36,15 @@ class CustomTableViewCell: UITableViewCell, ConversationCellConfiguratioin {
             return messageLabel.text!
         }
         set (newVal) {
-            messageLabel.text = newVal
+            guard let newValue = newVal else {
+                let textForNothing = "No messages yet"
+                let atrTextForNothing = NSMutableAttributedString(string: textForNothing, attributes: [NSAttributedString.Key.font: UIFont(
+                    name: "Chalkduster",
+                    size: 18.0)!])
+                messageLabel.attributedText = atrTextForNothing
+                return
+            }
+            messageLabel.text = newValue
         }
     }
 
@@ -48,20 +56,22 @@ class CustomTableViewCell: UITableViewCell, ConversationCellConfiguratioin {
             return formdate
         }
         set (newVal) {
-            var dateComponents = DateComponents()
-            dateComponents.setValue(-1, for: .day) // -1 day
-            
-            let now = Date() // Current date
-            let yesterday = Calendar.current.date(byAdding: dateComponents, to: now)
-            if (newVal! < yesterday!) {
-                //dd MMM
+            guard let newValue = newVal else {
+                print("Error in Date unwrapping")
+                return
+            }
+            guard let yesterday = Calendar.current.date(byAdding: .day, value: -1, to: Date()) else {
+                print("Error in yesterday unwrapping")
+                return
+            }
+            if (newValue < yesterday) {
                 let outputDateFormatter = DateFormatter()
                 outputDateFormatter.dateFormat = "dd MMM"
-                timeLabel.text = outputDateFormatter.string(from: newVal ?? Date())
+                timeLabel.text = outputDateFormatter.string(from: newValue)
             } else {
                 let outputDateFormatter = DateFormatter()
                 outputDateFormatter.dateFormat = "HH:mm"
-                timeLabel.text = outputDateFormatter.string(from: newVal ?? Date())
+                timeLabel.text = outputDateFormatter.string(from: newValue)
             }
         }
     }
@@ -72,8 +82,9 @@ class CustomTableViewCell: UITableViewCell, ConversationCellConfiguratioin {
         }
         set (newVal) {
             if newVal == true {
-                backgroundColor = UIColor.lightGray.withAlphaComponent(0.3)
-                //ECE9BE
+                backgroundColor = UIColor.yellow.withAlphaComponent(0.2)
+            } else {
+                backgroundColor = .clear
             }
         }
     }
@@ -84,7 +95,9 @@ class CustomTableViewCell: UITableViewCell, ConversationCellConfiguratioin {
         }
         set (newVal) {
             if newVal == true {
-                messageLabel.font = UIFont.boldSystemFont(ofSize: 17.0)
+                messageLabel.font = UIFont.boldSystemFont(ofSize: 18.0)
+            } else {
+                messageLabel.font = UIFont.systemFont(ofSize: 17.0)
             }
         }
     }

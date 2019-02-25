@@ -15,7 +15,7 @@ struct CellModel {
     var online: Bool
     var hasUreadMessages: Bool
     
-    init(name: String, message: String, date: Date, online: Bool, hasUnreadMessages: Bool) {
+    init(name: String, message: String?, date: Date, online: Bool, hasUnreadMessages: Bool) {
         self.name = name
         self.message = message
         self.date = date
