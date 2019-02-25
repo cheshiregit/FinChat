@@ -18,15 +18,17 @@ class ConversationsListViewController: UIViewController {
         tableView.delegate = self
         
         let isoDate = "November-25-2017 22:04"
+        let isoDate2 = "February-27-2019 21:04"
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MMMM-dd-yyyy HH:mm"
         let formdate = dateFormatter.date(from: isoDate) ?? Date()
+        let formdate2 = dateFormatter.date(from: isoDate2) ?? Date()
         
         let cellExp1 = CellModel(name: "Bob", message: "Hello", date: formdate, online: true, hasUnreadMessages: false)
         let cellExp2 = CellModel(name: "John", message: "Some text", date: formdate, online: true, hasUnreadMessages: true)
-        let cellExp3 = CellModel(name: "Anne", message: "Once upon a time", date: formdate, online: false, hasUnreadMessages: false)
+        let cellExp3 = CellModel(name: "Anne", message: "Once upon a time", date: formdate2, online: false, hasUnreadMessages: false)
         let cellExp4 = CellModel(name: "Tom", message: "Storyboard-based application", date: formdate, online: true, hasUnreadMessages: true)
-        let cellExp5 = CellModel(name: "Liza", message: "Override func prepare", date: formdate, online: true, hasUnreadMessages: false)
+        let cellExp5 = CellModel(name: "Liza", message: "Override func prepare", date: formdate2, online: true, hasUnreadMessages: false)
         cells.append(cellExp1)
         cells.append(cellExp2)
         cells.append(cellExp3)

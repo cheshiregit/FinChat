@@ -48,9 +48,21 @@ class CustomTableViewCell: UITableViewCell, ConversationCellConfiguratioin {
             return formdate
         }
         set (newVal) {
-            let outputDateFormatter = DateFormatter()
-            outputDateFormatter.dateFormat = "HH:mm"
-            timeLabel.text = outputDateFormatter.string(from: newVal ?? Date())
+            var dateComponents = DateComponents()
+            dateComponents.setValue(-1, for: .day) // -1 day
+            
+            let now = Date() // Current date
+            let yesterday = Calendar.current.date(byAdding: dateComponents, to: now)
+            if (newVal! < yesterday!) {
+                //dd MMM
+                let outputDateFormatter = DateFormatter()
+                outputDateFormatter.dateFormat = "dd MMM"
+                timeLabel.text = outputDateFormatter.string(from: newVal ?? Date())
+            } else {
+                let outputDateFormatter = DateFormatter()
+                outputDateFormatter.dateFormat = "HH:mm"
+                timeLabel.text = outputDateFormatter.string(from: newVal ?? Date())
+            }
         }
     }
     
