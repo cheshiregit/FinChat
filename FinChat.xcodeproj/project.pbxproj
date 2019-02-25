@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3002DC1522240B83009753EF /* ConversationsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3002DC1422240B83009753EF /* ConversationsListViewController.swift */; };
+		3002DC1722242253009753EF /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3002DC1622242253009753EF /* CustomTableViewCell.swift */; };
+		3002DC1922247BEB009753EF /* SellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3002DC1822247BEB009753EF /* SellModel.swift */; };
 		301EC570220CC520003BEDEF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301EC56F220CC520003BEDEF /* AppDelegate.swift */; };
 		301EC572220CC520003BEDEF /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301EC571220CC520003BEDEF /* ProfileViewController.swift */; };
 		301EC575220CC520003BEDEF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 301EC573220CC520003BEDEF /* Main.storyboard */; };
@@ -17,6 +20,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3002DC1422240B83009753EF /* ConversationsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationsListViewController.swift; sourceTree = "<group>"; };
+		3002DC1622242253009753EF /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		3002DC1822247BEB009753EF /* SellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellModel.swift; sourceTree = "<group>"; };
 		301EC56C220CC520003BEDEF /* FinChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		301EC56F220CC520003BEDEF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		301EC571220CC520003BEDEF /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -61,6 +67,9 @@
 				30C32D1922197378003DBC00 /* Extensions */,
 				301EC56F220CC520003BEDEF /* AppDelegate.swift */,
 				301EC571220CC520003BEDEF /* ProfileViewController.swift */,
+				3002DC1422240B83009753EF /* ConversationsListViewController.swift */,
+				3002DC1822247BEB009753EF /* SellModel.swift */,
+				3002DC1622242253009753EF /* CustomTableViewCell.swift */,
 				301EC573220CC520003BEDEF /* Main.storyboard */,
 				301EC576220CC522003BEDEF /* Assets.xcassets */,
 				301EC578220CC522003BEDEF /* LaunchScreen.storyboard */,
@@ -149,7 +158,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3002DC1722242253009753EF /* CustomTableViewCell.swift in Sources */,
+				3002DC1922247BEB009753EF /* SellModel.swift in Sources */,
 				301EC572220CC520003BEDEF /* ProfileViewController.swift in Sources */,
+				3002DC1522240B83009753EF /* ConversationsListViewController.swift in Sources */,
 				30C32D1D2219752D003DBC00 /* UIImageView+IBDesignable.swift in Sources */,
 				301EC570220CC520003BEDEF /* AppDelegate.swift in Sources */,
 				30C32D1B221973DF003DBC00 /* UIButton+IBDesignable.swift in Sources */,
