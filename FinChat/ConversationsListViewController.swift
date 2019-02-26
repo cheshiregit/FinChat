@@ -43,21 +43,21 @@ class ConversationsListViewController: UIViewController {
         cellsOnline.append(cellExp3)
         cellsOnline.append(cellExp4)
         cellsOnline.append(cellExp5)
-//        cellsOnline.append(cellExp3)
-//        cellsOnline.append(cellExp0)
+        cellsOnline.append(cellExp3)
         cellsOnline.append(cellExp0)
-//        cellsOnline.append(cellExp3)
-//        cellsOnline.append(cellExp3)
+        cellsOnline.append(cellExp0)
+        cellsOnline.append(cellExp3)
+        cellsOnline.append(cellExp3)
         cellsOffline.append(cellExp6)
         cellsOffline.append(cellExp7)
         cellsOffline.append(cellExp8)
         cellsOffline.append(cellExp9)
         cellsOffline.append(cellExp10)
-//        cellsOffline.append(cellExp7)
-//        cellsOffline.append(cellExp7)
-//        cellsOffline.append(cellExp7)
-//        cellsOffline.append(cellExp7)
-//        cellsOffline.append(cellExp7)
+        cellsOffline.append(cellExp7)
+        cellsOffline.append(cellExp7)
+        cellsOffline.append(cellExp7)
+        cellsOffline.append(cellExp7)
+        cellsOffline.append(cellExp7)
     }
     
     var cellsOnline = [CellModel]()
@@ -121,5 +121,16 @@ extension ConversationsListViewController: UITableViewDataSource, UITableViewDel
             cell.hasUreadMessages = cellsOffline[indexPath.row].hasUreadMessages
         }
         return cell as! UITableViewCell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let personName = cellsOnline[indexPath.row].name
+        performSegue(withIdentifier: "showConversation", sender: personName)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let vc = segue.destination as? ConversationViewController else { return }
+        guard let personName = sender as? String? else { return }
+        vc.conversationTitle = personName
     }
 }

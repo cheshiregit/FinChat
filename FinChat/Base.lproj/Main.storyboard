@@ -242,11 +242,42 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="k3V-p2-SMI" id="x8X-tC-Xue"/>
+                        <segue destination="eZT-3E-xV6" kind="show" identifier="showConversation" id="Was-fB-Ny6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Mk-tl-CBC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1185" y="32.74647887323944"/>
+        </scene>
+        <!--Conversation View Controller-->
+        <scene sceneID="Blu-hh-D8W">
+            <objects>
+                <viewController id="eZT-3E-xV6" customClass="ConversationViewController" customModule="FinChat" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MdL-Q7-Awg">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Vue-cW-hUe">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Vue-cW-hUe" firstAttribute="top" secondItem="AVg-iZ-JGc" secondAttribute="top" id="6Q5-Ds-13o"/>
+                            <constraint firstItem="Vue-cW-hUe" firstAttribute="leading" secondItem="AVg-iZ-JGc" secondAttribute="leading" id="Iow-Gv-qHm"/>
+                            <constraint firstItem="AVg-iZ-JGc" firstAttribute="trailing" secondItem="Vue-cW-hUe" secondAttribute="trailing" id="M7p-bA-Dtq"/>
+                            <constraint firstItem="AVg-iZ-JGc" firstAttribute="bottom" secondItem="Vue-cW-hUe" secondAttribute="bottom" id="hbQ-4n-YzO"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="AVg-iZ-JGc"/>
+                    </view>
+                    <connections>
+                        <outlet property="conversationTableView" destination="Vue-cW-hUe" id="O8H-j4-e61"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="i1B-Gh-PuP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2325" y="59"/>
         </scene>
     </scenes>
     <resources>

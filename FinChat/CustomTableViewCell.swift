@@ -44,7 +44,8 @@ class CustomTableViewCell: UITableViewCell, ConversationCellConfiguratioin {
                 messageLabel.attributedText = atrTextForNothing
                 return
             }
-            messageLabel.text = newValue
+            //messageLabel.text = newValue
+            messageLabel.attributedText = NSMutableAttributedString(string: newValue)
         }
     }
 
