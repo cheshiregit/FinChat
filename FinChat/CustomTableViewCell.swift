@@ -38,14 +38,19 @@ class CustomTableViewCell: UITableViewCell, ConversationCellConfiguratioin {
         set (newVal) {
             guard let newValue = newVal else {
                 let textForNothing = "No messages yet"
-                let atrTextForNothing = NSMutableAttributedString(string: textForNothing, attributes: [NSAttributedString.Key.font: UIFont(
-                    name: "Chalkduster",
-                    size: 18.0)!])
+                let myAttributes = [NSAttributedString.Key.font: UIFont(name: "Chalkduster", size: 18.0)!,
+                                    NSAttributedString.Key.backgroundColor: UIColor.yellow]
+                let atrTextForNothing = NSAttributedString(string: textForNothing, attributes: myAttributes)
+                /*
+                 let atrTextForNothing = NSAttributedString(string: textForNothing, attributes: [NSAttributedString.Key.font: UIFont(
+                 name: "Chalkduster",
+                 size: 17.0)!])
+                */
                 messageLabel.attributedText = atrTextForNothing
+                print("guard atrtext")
                 return
             }
-            //messageLabel.text = newValue
-            messageLabel.attributedText = NSMutableAttributedString(string: newValue)
+            messageLabel.text = newValue
         }
     }
 

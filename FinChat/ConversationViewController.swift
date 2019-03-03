@@ -21,10 +21,8 @@ class ConversationViewController: UIViewController {
         conversationTableView.dataSource = self
         conversationTableView.delegate = self
         self.navigationItem.title = conversationTitle
-        conversationTableView.register(UINib.init(nibName: "InputMessageCell", bundle: nil), forCellReuseIdentifier: "inputMessage")
-//        conversationTableView.register(UINib.init(nibName: "OutputMessageCell", bundle: nil), forCellReuseIdentifier: "outputMessage")
         conversationTableView.rowHeight = UITableView.automaticDimension
-        conversationTableView.estimatedRowHeight = 100.0
+        conversationTableView.estimatedRowHeight = 60.0
     }
     
 }
@@ -36,10 +34,9 @@ extension ConversationViewController: UITableViewDataSource, UITableViewDelegate
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let inputCell = tableView.dequeueReusableCell(withIdentifier: "inputMessage", for: indexPath) as! InputMessageCell
-       // let outputCell = tableView.dequeueReusableCell(withIdentifier: "outputMessage", for: indexPath) as! OutputMessageCell
-        inputCell.inputMessageLabel.text = textMessage
-        return inputCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "conversationCell", for: indexPath) as! MessageCellConfiguratioin
+        cell.textMessage = textMessage
+        return cell as! UITableViewCell
     }
     
     
