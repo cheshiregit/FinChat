@@ -164,6 +164,77 @@
             </objects>
             <point key="canvasLocation" x="420" y="33"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="cJe-Ox-Kui">
+            <objects>
+                <navigationController id="CWQ-Cc-yNU" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="6wn-cA-ptl">
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="NGf-Tf-wi3" kind="relationship" relationship="rootViewController" id="TxQ-fp-EER"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ycB-Np-kaY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="420" y="836"/>
+        </scene>
+        <!--Themes View Controller-->
+        <scene sceneID="FVB-eS-pV9">
+            <objects>
+                <viewController id="NGf-Tf-wi3" customClass="ThemesViewController" customModule="FinChat" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ohQ-dx-mMD">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OOI-CI-HnU">
+                                <rect key="frame" x="129.5" y="269" width="61" height="30"/>
+                                <state key="normal" title="Theme 2"/>
+                                <connections>
+                                    <action selector="setTheme2Action:" destination="NGf-Tf-wi3" eventType="touchUpInside" id="HoM-sF-QBz"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A4p-PV-dpe">
+                                <rect key="frame" x="129.5" y="359" width="61" height="30"/>
+                                <state key="normal" title="Theme 3"/>
+                                <connections>
+                                    <action selector="setTheme3Action:" destination="NGf-Tf-wi3" eventType="touchUpInside" id="5IL-3y-WJE"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qyO-Hu-fNL">
+                                <rect key="frame" x="130.5" y="179" width="59" height="30"/>
+                                <state key="normal" title="Theme 1"/>
+                                <connections>
+                                    <action selector="setTheme1Action:" destination="NGf-Tf-wi3" eventType="touchUpInside" id="qx6-09-o0n"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="RvL-cI-v6d" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="A4p-PV-dpe" secondAttribute="bottom" constant="60" id="4qR-yE-5Ve"/>
+                            <constraint firstItem="A4p-PV-dpe" firstAttribute="centerX" secondItem="ohQ-dx-mMD" secondAttribute="centerX" id="Cz6-ez-iss"/>
+                            <constraint firstItem="OOI-CI-HnU" firstAttribute="centerX" secondItem="ohQ-dx-mMD" secondAttribute="centerX" id="S0C-ey-LS4"/>
+                            <constraint firstItem="OOI-CI-HnU" firstAttribute="top" secondItem="qyO-Hu-fNL" secondAttribute="bottom" constant="60" id="TV7-Y6-kQa"/>
+                            <constraint firstItem="OOI-CI-HnU" firstAttribute="centerY" secondItem="ohQ-dx-mMD" secondAttribute="centerY" id="XBV-fi-enP"/>
+                            <constraint firstItem="A4p-PV-dpe" firstAttribute="top" secondItem="OOI-CI-HnU" secondAttribute="bottom" constant="60" id="jQt-0L-0Hq"/>
+                            <constraint firstItem="qyO-Hu-fNL" firstAttribute="centerX" secondItem="ohQ-dx-mMD" secondAttribute="centerX" id="mWP-cj-Lq1"/>
+                            <constraint firstItem="qyO-Hu-fNL" firstAttribute="top" relation="greaterThanOrEqual" secondItem="RvL-cI-v6d" secondAttribute="top" constant="60" id="wPx-dU-MY5"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="RvL-cI-v6d"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="0DF-YH-YXc">
+                        <barButtonItem key="leftBarButtonItem" title="Close" id="BTg-bf-jaZ">
+                            <connections>
+                                <action selector="closeButton:" destination="NGf-Tf-wi3" id="v15-Dk-a9E"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="B8f-OW-c2v" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1185" y="836"/>
+        </scene>
         <!--Tinkoff Chat-->
         <scene sceneID="kNe-g6-ACh">
             <objects>
@@ -234,6 +305,11 @@
                         <viewLayoutGuide key="safeArea" id="KXS-8h-8jm"/>
                     </view>
                     <navigationItem key="navigationItem" title="Tinkoff Chat" id="Uzn-xx-QQH">
+                        <barButtonItem key="leftBarButtonItem" title="Themes" id="3s0-C5-VfQ">
+                            <connections>
+                                <segue destination="CWQ-Cc-yNU" kind="presentation" id="fiQ-NE-bOn"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Профиль" id="Ixj-JZ-sH9">
                             <connections>
                                 <segue destination="iOE-FA-5XN" kind="presentation" id="YHG-2r-OWE"/>
