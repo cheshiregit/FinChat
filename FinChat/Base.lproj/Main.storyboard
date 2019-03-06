@@ -203,7 +203,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="setTheme2Action:" destination="NGf-Tf-wi3" eventType="touchUpInside" id="HoM-sF-QBz"/>
+                                    <action selector="setTheme2Action:" destination="NGf-Tf-wi3" eventType="touchUpInside" id="RQJ-Fc-HuT"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A4p-PV-dpe">
@@ -221,7 +221,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="setTheme3Action:" destination="NGf-Tf-wi3" eventType="touchUpInside" id="5IL-3y-WJE"/>
+                                    <action selector="setTheme3Action:" destination="NGf-Tf-wi3" eventType="touchUpInside" id="Q1x-EN-gfX"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qyO-Hu-fNL">
@@ -239,7 +239,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="setTheme1Action:" destination="NGf-Tf-wi3" eventType="touchUpInside" id="qx6-09-o0n"/>
+                                    <action selector="setTheme1Action:" destination="NGf-Tf-wi3" eventType="touchUpInside" id="odS-su-5eL"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -259,14 +259,14 @@
                     <navigationItem key="navigationItem" id="0DF-YH-YXc">
                         <barButtonItem key="leftBarButtonItem" title="Close" id="BTg-bf-jaZ">
                             <connections>
-                                <action selector="closeButton:" destination="NGf-Tf-wi3" id="v15-Dk-a9E"/>
+                                <action selector="closeButton:" destination="NGf-Tf-wi3" id="zXF-bJ-3qt"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B8f-OW-c2v" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1185" y="836"/>
+            <point key="canvasLocation" x="1378" y="836"/>
         </scene>
         <!--Tinkoff Chat-->
         <scene sceneID="kNe-g6-ACh">
@@ -346,7 +346,7 @@
                     <navigationItem key="navigationItem" title="Tinkoff Chat" id="Uzn-xx-QQH">
                         <barButtonItem key="leftBarButtonItem" title="Themes" id="3s0-C5-VfQ">
                             <connections>
-                                <segue destination="CWQ-Cc-yNU" kind="presentation" id="fiQ-NE-bOn"/>
+                                <segue destination="CWQ-Cc-yNU" kind="presentation" identifier="themesSegue" id="fiQ-NE-bOn"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Профиль" id="Ixj-JZ-sH9">

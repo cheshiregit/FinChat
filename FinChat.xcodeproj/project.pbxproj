@@ -25,6 +25,7 @@
 		3070BF7A222DD73F00D584CD /* Themes.m in Sources */ = {isa = PBXBuildFile; fileRef = 3070BF79222DD73F00D584CD /* Themes.m */; };
 		3070BF7C222FBDA000D584CD /* ThemesViewControllerSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3070BF7B222FBDA000D584CD /* ThemesViewControllerSwift.swift */; };
 		3070BF7E222FC3A800D584CD /* UserDefaultsColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3070BF7D222FC3A800D584CD /* UserDefaultsColor.swift */; };
+		3070BF80222FDFAD00D584CD /* ThemesSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3070BF7F222FDFAD00D584CD /* ThemesSwift.swift */; };
 		30C32D1B221973DF003DBC00 /* UIButton+IBDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C32D1A221973DF003DBC00 /* UIButton+IBDesignable.swift */; };
 		30C32D1D2219752D003DBC00 /* UIImageView+IBDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C32D1C2219752D003DBC00 /* UIImageView+IBDesignable.swift */; };
 /* End PBXBuildFile section */
@@ -54,6 +55,7 @@
 		3070BF79222DD73F00D584CD /* Themes.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Themes.m; sourceTree = "<group>"; };
 		3070BF7B222FBDA000D584CD /* ThemesViewControllerSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemesViewControllerSwift.swift; sourceTree = "<group>"; };
 		3070BF7D222FC3A800D584CD /* UserDefaultsColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsColor.swift; sourceTree = "<group>"; };
+		3070BF7F222FDFAD00D584CD /* ThemesSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemesSwift.swift; sourceTree = "<group>"; };
 		30C32D1A221973DF003DBC00 /* UIButton+IBDesignable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+IBDesignable.swift"; sourceTree = "<group>"; };
 		30C32D1C2219752D003DBC00 /* UIImageView+IBDesignable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+IBDesignable.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -89,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				3070BF7B222FBDA000D584CD /* ThemesViewControllerSwift.swift */,
+				3070BF7F222FDFAD00D584CD /* ThemesSwift.swift */,
 				3002DC1422240B83009753EF /* ConversationsListViewController.swift */,
 				3070BF72222C8D4200D584CD /* Obj C */,
 				30C32D1922197378003DBC00 /* Extensions */,
@@ -222,6 +225,7 @@
 				300179A122256FE800E39CBD /* InputMessageCell.swift in Sources */,
 				300179A52225700200E39CBD /* OutputMessageCell.swift in Sources */,
 				30C32D1B221973DF003DBC00 /* UIButton+IBDesignable.swift in Sources */,
+				3070BF80222FDFAD00D584CD /* ThemesSwift.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

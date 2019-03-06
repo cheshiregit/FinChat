@@ -37,7 +37,7 @@
     [super viewDidLoad];
     
     UIColor *firstColor = [UIColor whiteColor];
-    UIColor *secondColor = [[UIColor alloc] initWithRed:0.16 green:0.18 blue:0.27 alpha:1.0];
+    UIColor *secondColor = [[UIColor alloc] initWithRed:0.15 green:0.2 blue:0.3 alpha:1.0];
     UIColor *thirdColor = [[UIColor alloc] initWithRed:0.98 green:0.84 blue:0.56 alpha:1.0];
     
     _model = [[Themes alloc] initWithFirstTheme:firstColor secondTheme:secondColor thirdTheme:thirdColor];

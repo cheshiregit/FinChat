@@ -59,7 +59,9 @@ class ConversationsListViewController: UIViewController {
         cellsOffline.append(cellExp7)
         cellsOffline.append(cellExp7)
         
-        self.view.backgroundColor = savedTheme()
+        //self.view.backgroundColor = savedTheme()
+        self.navigationController?.navigationBar.barTintColor = savedTheme()
+        UINavigationBar.appearance().barTintColor = savedTheme()
     }
     
     var cellsOnline = [CellModel]()
@@ -133,10 +135,21 @@ extension ConversationsListViewController: UITableViewDataSource, UITableViewDel
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        print(segue.destination)
-        guard let vc = segue.destination as? ConversationViewController else { return }
-        guard let personName = sender as? String? else { return }
-        vc.conversationTitle = personName
+//        print(segue.destination) themesSegue
+        switch segue.identifier {
+        case "showConversation":
+            guard let vc = segue.destination as? ConversationViewController else { return }
+            guard let personName = sender as? String? else { return }
+            vc.conversationTitle = personName
+        case "themesSegue":
+            guard let vc = segue.destination as? ThemesViewControllerSwift else { return }
+            vc.themesClosure = { theme in
+                self.logThemeChanging(selectedTheme: theme)
+            }
+            
+        default:
+            return
+        }
     }
     
     func logThemeChanging(selectedTheme: UIColor) {

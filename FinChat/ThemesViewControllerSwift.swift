@@ -12,21 +12,46 @@ typealias themesClosure = (_ color: UIColor) -> (Void)
 
 class ThemesViewControllerSwift: UIViewController {
     
-    var model: Themes?
+    var model = ThemesSwift()
     var themesClosure: themesClosure?
-
+    
+    @IBAction func closeButtonTapped(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func theme1Button(_ sender: Any) {
+        changeColor(model.theme1)
+    }
+    
+    @IBAction func theme2Button(_ sender: Any) {
+        changeColor(model.theme2)
+    }
+    
+    @IBAction func theme3Button(_ sender: Any) {
+        changeColor(model.theme3)
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        model = Themes()
+        model = ThemesSwift()
+        self.view.backgroundColor = UserDefaults.standard.colorForKey(key: "Theme")
     }
     
     func changeColor(_ color: UIColor?) {
         guard let color = color else { return }
         view.backgroundColor = color
         themesClosure?(color)
-        let navigationBarAppearace = UINavigationBar.appearance()
-        navigationBarAppearace.barTintColor = color
+        UINavigationBar.appearance().barTintColor = color
         UserDefaults.standard.setColor(color: color, forKey: "Theme")
+        // костыль для мгновенного обновления navigation bar нашел на stackoverflow
+        // https://stackoverflow.com/questions/15024037/updating-navigation-bar-after-a-change-using-uiappearance
+        for window in UIApplication.shared.windows {
+            for view in window.subviews {
+                view.removeFromSuperview()
+                window.addSubview(view);
+            }
+        }
     }
 
 }
