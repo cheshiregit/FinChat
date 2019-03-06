@@ -11,13 +11,18 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface Themes : NSObject
+@interface Themes : NSObject {
+    UIColor* theme1;
+    UIColor* theme2;
+    UIColor* theme3;
+}
 
-- (Themes*) init;
+- (instancetype) initWithFirstTheme:(UIColor *)theme1 secondTheme:(UIColor *)theme2 thirdTheme:(UIColor *)theme3;
+- (void)dealloc;
 
-@property (nonatomic, retain) UIColor *theme1;
-@property (nonatomic, retain) UIColor *theme2;
-@property (nonatomic, retain) UIColor *theme3;
+@property (nonatomic, retain) UIColor *theme1Light;
+@property (nonatomic, retain) UIColor *theme2Dark;
+@property (nonatomic, retain) UIColor *theme3Champagne;
 
 @end
 

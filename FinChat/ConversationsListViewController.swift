@@ -129,6 +129,7 @@ extension ConversationsListViewController: UITableViewDataSource, UITableViewDel
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        print(segue.destination)
         guard let vc = segue.destination as? ConversationViewController else { return }
         guard let personName = sender as? String? else { return }
         vc.conversationTitle = personName

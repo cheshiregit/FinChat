@@ -19,39 +19,31 @@
 }
 
 - (IBAction)setTheme1Action:(id)sender {
-    [_delegate themesViewController:self didSelectTheme:[self.model theme1]];
+    [_delegate themesViewController:self didSelectTheme:[self.model theme1Light]];
+    self.view.backgroundColor = [self.model theme1Light];
 }
 
 - (IBAction)setTheme2Action:(id)sender {
+    [_delegate themesViewController:self didSelectTheme:[self.model theme2Dark]];
+    self.view.backgroundColor = [self.model theme2Dark];
 }
 
 - (IBAction)setTheme3Action:(id)sender {
-}
-
-@synthesize delegate = _delegate;
-
-- (void) setDelegate:(id<ThemesViewControllerDelegate>)delegate{
-    _delegate = delegate;
-}
-
-- (id<ThemesViewControllerDelegate>) delegate {
-    return _delegate;
-}
-
-@synthesize model = _model;
-
--(Themes *) model {
-    return [[_model retain] autorelease];
-}
-
--(void) setModel:(Themes *)model {
-    [_model autorelease];
-    _model = [model retain];
+    [_delegate themesViewController:self didSelectTheme:[self.model theme3Champagne]];
+    self.view.backgroundColor = [self.model theme3Champagne];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _model = [[Themes alloc] init];
+    
+    UIColor *firstColor = [UIColor whiteColor];
+    UIColor *secondColor = [[UIColor alloc] initWithRed:0.16 green:0.18 blue:0.27 alpha:1.0];
+    UIColor *thirdColor = [[UIColor alloc] initWithRed:0.98 green:0.84 blue:0.56 alpha:1.0];
+    
+    _model = [[Themes alloc] initWithFirstTheme:firstColor secondTheme:secondColor thirdTheme:thirdColor];
+    
+    [secondColor release];
+    [thirdColor release];
 }
 
 - (void)dealloc {
@@ -59,6 +51,26 @@
     _model = nil;
     _delegate = nil;
     [super dealloc];
+}
+
+- (Themes*)model {
+    return _model;
+}
+
+- (id<ThemesViewControllerDelegate>)delegate {
+    return _delegate;
+}
+
+- (void)setModel:(Themes *)model {
+    if (_model != model) {
+        [_model release];
+        _model = [model retain];
+    }
+}
+
+- (void)setDelegate:(id<ThemesViewControllerDelegate>)delegate {
+    if (_delegate != delegate)
+        _delegate = delegate;
 }
 
 @end

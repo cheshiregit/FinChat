@@ -8,13 +8,16 @@
 
 #import <UIKit/UIKit.h>
 #import "ThemesViewControllerDelegate.h"
+#import "Themes.h"
 
-@class Themes;
 @protocol ThemesViewControllerDelegate;
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ThemesViewController : UIViewController
+@interface ThemesViewController : UIViewController {
+    id<ThemesViewControllerDelegate> _delegate;
+    Themes *_model;
+}
 
 @property(retain, nonatomic) Themes *model;
 @property(assign, nonatomic) id<ThemesViewControllerDelegate> delegate;
