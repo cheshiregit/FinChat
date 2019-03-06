@@ -58,21 +58,25 @@ class ConversationsListViewController: UIViewController {
         cellsOffline.append(cellExp7)
         cellsOffline.append(cellExp7)
         cellsOffline.append(cellExp7)
+        
+        self.view.backgroundColor = savedTheme()
     }
     
     var cellsOnline = [CellModel]()
     var cellsOffline = [CellModel]()
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    let savedTheme = { () -> UIColor? in
+        
+        var theme: UIColor?
+        if let themeData = UserDefaults.standard.colorForKey(key: "Theme") {
+            theme = themeData
+        } else {
+            theme = UIColor.white
+        }
+        
+        return theme
     }
-    */
-
+    
 }
 
 extension ConversationsListViewController: UITableViewDataSource, UITableViewDelegate {
@@ -134,4 +138,16 @@ extension ConversationsListViewController: UITableViewDataSource, UITableViewDel
         guard let personName = sender as? String? else { return }
         vc.conversationTitle = personName
     }
+    
+    func logThemeChanging(selectedTheme: UIColor) {
+        print("Theme is \(selectedTheme)")
+    }
+    
 }
+
+extension ConversationsListViewController: ThemesViewControllerDelegate {
+    func themesViewController(_ controller: ThemesViewController, didSelectTheme selectedTheme: UIColor) {
+        logThemeChanging(selectedTheme: selectedTheme)
+    }
+}
+
