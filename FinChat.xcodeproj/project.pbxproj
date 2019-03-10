@@ -8,10 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		3001799E2225611800E39CBD /* ConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3001799D2225611800E39CBD /* ConversationViewController.swift */; };
-		300179A122256FE800E39CBD /* InputMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3001799F22256FE800E39CBD /* InputMessageCell.swift */; };
-		300179A222256FE800E39CBD /* InputMessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 300179A022256FE800E39CBD /* InputMessageCell.xib */; };
-		300179A52225700200E39CBD /* OutputMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300179A32225700200E39CBD /* OutputMessageCell.swift */; };
-		300179A62225700200E39CBD /* OutputMessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 300179A42225700200E39CBD /* OutputMessageCell.xib */; };
 		300179A822259C9A00E39CBD /* ConversationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300179A722259C9A00E39CBD /* ConversationCell.swift */; };
 		3002DC1522240B83009753EF /* ConversationsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3002DC1422240B83009753EF /* ConversationsListViewController.swift */; };
 		3002DC1722242253009753EF /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3002DC1622242253009753EF /* CustomTableViewCell.swift */; };
@@ -32,10 +28,6 @@
 
 /* Begin PBXFileReference section */
 		3001799D2225611800E39CBD /* ConversationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationViewController.swift; sourceTree = "<group>"; };
-		3001799F22256FE800E39CBD /* InputMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputMessageCell.swift; sourceTree = "<group>"; };
-		300179A022256FE800E39CBD /* InputMessageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InputMessageCell.xib; sourceTree = "<group>"; };
-		300179A32225700200E39CBD /* OutputMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutputMessageCell.swift; sourceTree = "<group>"; };
-		300179A42225700200E39CBD /* OutputMessageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OutputMessageCell.xib; sourceTree = "<group>"; };
 		300179A722259C9A00E39CBD /* ConversationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationCell.swift; sourceTree = "<group>"; };
 		3002DC1422240B83009753EF /* ConversationsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationsListViewController.swift; sourceTree = "<group>"; };
 		3002DC1622242253009753EF /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
@@ -100,10 +92,6 @@
 				3002DC1822247BEB009753EF /* SellModel.swift */,
 				3002DC1622242253009753EF /* CustomTableViewCell.swift */,
 				301EC573220CC520003BEDEF /* Main.storyboard */,
-				3001799F22256FE800E39CBD /* InputMessageCell.swift */,
-				300179A022256FE800E39CBD /* InputMessageCell.xib */,
-				300179A32225700200E39CBD /* OutputMessageCell.swift */,
-				300179A42225700200E39CBD /* OutputMessageCell.xib */,
 				3001799D2225611800E39CBD /* ConversationViewController.swift */,
 				300179A722259C9A00E39CBD /* ConversationCell.swift */,
 				301EC576220CC522003BEDEF /* Assets.xcassets */,
@@ -195,10 +183,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				300179A62225700200E39CBD /* OutputMessageCell.xib in Resources */,
 				301EC57A220CC522003BEDEF /* LaunchScreen.storyboard in Resources */,
 				301EC577220CC522003BEDEF /* Assets.xcassets in Resources */,
-				300179A222256FE800E39CBD /* InputMessageCell.xib in Resources */,
 				301EC575220CC520003BEDEF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -222,8 +208,6 @@
 				3070BF7A222DD73F00D584CD /* Themes.m in Sources */,
 				30C32D1D2219752D003DBC00 /* UIImageView+IBDesignable.swift in Sources */,
 				301EC570220CC520003BEDEF /* AppDelegate.swift in Sources */,
-				300179A122256FE800E39CBD /* InputMessageCell.swift in Sources */,
-				300179A52225700200E39CBD /* OutputMessageCell.swift in Sources */,
 				30C32D1B221973DF003DBC00 /* UIButton+IBDesignable.swift in Sources */,
 				3070BF80222FDFAD00D584CD /* ThemesSwift.swift in Sources */,
 			);

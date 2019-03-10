@@ -167,7 +167,6 @@
         <!--Navigation Controller-->
         <scene sceneID="cJe-Ox-Kui">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ycB-Np-kaY" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="CWQ-Cc-yNU" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="6wn-cA-ptl">
                         <rect key="frame" x="0.0" y="20" width="320" height="44"/>
@@ -177,13 +176,14 @@
                         <segue destination="NGf-Tf-wi3" kind="relationship" relationship="rootViewController" id="TxQ-fp-EER"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ycB-Np-kaY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="420" y="836"/>
         </scene>
-        <!--Themes View Controller-->
+        <!--Themes View Controller Swift-->
         <scene sceneID="FVB-eS-pV9">
             <objects>
-                <viewController id="NGf-Tf-wi3" customClass="ThemesViewController" sceneMemberID="viewController">
+                <viewController id="NGf-Tf-wi3" customClass="ThemesViewControllerSwift" customModule="FinChat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ohQ-dx-mMD">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -203,7 +203,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="setTheme2Action:" destination="NGf-Tf-wi3" eventType="touchUpInside" id="RQJ-Fc-HuT"/>
+                                    <action selector="theme2Button:" destination="NGf-Tf-wi3" eventType="touchUpInside" id="iCT-eN-cJc"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A4p-PV-dpe">
@@ -221,7 +221,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="setTheme3Action:" destination="NGf-Tf-wi3" eventType="touchUpInside" id="Q1x-EN-gfX"/>
+                                    <action selector="theme3Button:" destination="NGf-Tf-wi3" eventType="touchUpInside" id="Ma4-Zn-XdX"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qyO-Hu-fNL">
@@ -239,7 +239,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="setTheme1Action:" destination="NGf-Tf-wi3" eventType="touchUpInside" id="odS-su-5eL"/>
+                                    <action selector="theme1Button:" destination="NGf-Tf-wi3" eventType="touchUpInside" id="BVa-gb-xC7"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -259,7 +259,7 @@
                     <navigationItem key="navigationItem" id="0DF-YH-YXc">
                         <barButtonItem key="leftBarButtonItem" title="Close" id="BTg-bf-jaZ">
                             <connections>
-                                <action selector="closeButton:" destination="NGf-Tf-wi3" id="zXF-bJ-3qt"/>
+                                <action selector="closeButtonTapped:" destination="NGf-Tf-wi3" id="BHB-uU-qbd"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
