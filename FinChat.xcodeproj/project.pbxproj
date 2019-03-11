@@ -22,6 +22,8 @@
 		3070BF7C222FBDA000D584CD /* ThemesViewControllerSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3070BF7B222FBDA000D584CD /* ThemesViewControllerSwift.swift */; };
 		3070BF7E222FC3A800D584CD /* UserDefaultsColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3070BF7D222FC3A800D584CD /* UserDefaultsColor.swift */; };
 		3070BF80222FDFAD00D584CD /* ThemesSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3070BF7F222FDFAD00D584CD /* ThemesSwift.swift */; };
+		309C894A22352B35005C4E57 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 309C894922352B35005C4E57 /* Profile.storyboard */; };
+		309C894D22352BEF005C4E57 /* Themes.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 309C894B22352BEF005C4E57 /* Themes.storyboard */; };
 		30C32D1B221973DF003DBC00 /* UIButton+IBDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C32D1A221973DF003DBC00 /* UIButton+IBDesignable.swift */; };
 		30C32D1D2219752D003DBC00 /* UIImageView+IBDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C32D1C2219752D003DBC00 /* UIImageView+IBDesignable.swift */; };
 /* End PBXBuildFile section */
@@ -48,6 +50,8 @@
 		3070BF7B222FBDA000D584CD /* ThemesViewControllerSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemesViewControllerSwift.swift; sourceTree = "<group>"; };
 		3070BF7D222FC3A800D584CD /* UserDefaultsColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsColor.swift; sourceTree = "<group>"; };
 		3070BF7F222FDFAD00D584CD /* ThemesSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemesSwift.swift; sourceTree = "<group>"; };
+		309C894922352B35005C4E57 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		309C894C22352BEF005C4E57 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = FinChat/Base.lproj/Themes.storyboard; sourceTree = "<group>"; };
 		30C32D1A221973DF003DBC00 /* UIButton+IBDesignable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+IBDesignable.swift"; sourceTree = "<group>"; };
 		30C32D1C2219752D003DBC00 /* UIImageView+IBDesignable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+IBDesignable.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -91,7 +95,7 @@
 				301EC571220CC520003BEDEF /* ProfileViewController.swift */,
 				3002DC1822247BEB009753EF /* SellModel.swift */,
 				3002DC1622242253009753EF /* CustomTableViewCell.swift */,
-				301EC573220CC520003BEDEF /* Main.storyboard */,
+				309C894E22352C93005C4E57 /* Storyboards */,
 				3001799D2225611800E39CBD /* ConversationViewController.swift */,
 				300179A722259C9A00E39CBD /* ConversationCell.swift */,
 				301EC576220CC522003BEDEF /* Assets.xcassets */,
@@ -112,6 +116,16 @@
 				3070BF73222C980100D584CD /* FinChat-Bridging-Header.h */,
 			);
 			path = "Obj C";
+			sourceTree = "<group>";
+		};
+		309C894E22352C93005C4E57 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				301EC573220CC520003BEDEF /* Main.storyboard */,
+				309C894B22352BEF005C4E57 /* Themes.storyboard */,
+				309C894922352B35005C4E57 /* Profile.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 		30C32D1922197378003DBC00 /* Extensions */ = {
@@ -185,6 +199,8 @@
 			files = (
 				301EC57A220CC522003BEDEF /* LaunchScreen.storyboard in Resources */,
 				301EC577220CC522003BEDEF /* Assets.xcassets in Resources */,
+				309C894A22352B35005C4E57 /* Profile.storyboard in Resources */,
+				309C894D22352BEF005C4E57 /* Themes.storyboard in Resources */,
 				301EC575220CC520003BEDEF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -230,6 +246,14 @@
 				301EC579220CC522003BEDEF /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		309C894B22352BEF005C4E57 /* Themes.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				309C894C22352BEF005C4E57 /* Base */,
+			);
+			name = Themes.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

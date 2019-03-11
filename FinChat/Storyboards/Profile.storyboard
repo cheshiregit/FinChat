@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iOE-FA-5XN">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="Q1Q-VH-0mP">
+            <objects>
+                <navigationController id="iOE-FA-5XN" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="JZ8-gL-7uy">
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="hBg-xB-vUi"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7LM-SW-UDo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1997" y="-669"/>
+        </scene>
+        <!--Профиль-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ProfileViewController" customModule="FinChat" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Александр Федоров" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LQi-6O-sCo">
+                                <rect key="frame" x="16" y="372" width="288" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4B8-sc-hFz">
+                                <rect key="frame" x="16" y="506" width="288" height="46"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="46" id="QCy-Ed-JcJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Редактировать">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="242" verticalCompressionResistancePriority="749" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8hF-5h-fTm">
+                                <rect key="frame" x="16" y="410" width="288" height="57.5"/>
+                                <string key="text">👨‍💻Люблю программировать под iOS
+👨‍🎓Изучать новые технологии
+👨‍🏫Помогать развиваться другим</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder-user" translatesAutoresizingMaskIntoConstraints="NO" id="s4x-Fd-ChU">
+                                <rect key="frame" x="16" y="72" width="288" height="288"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="s4x-Fd-ChU" secondAttribute="height" multiplier="1:1" id="4cI-SW-bij"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="50"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DIq-LM-uEx">
+                                <rect key="frame" x="224" y="280" width="80" height="80"/>
+                                <color key="backgroundColor" red="0.20383259654045105" green="0.46357297897338867" blue="0.97398728132247925" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="DIq-LM-uEx" secondAttribute="height" multiplier="1:1" id="N1D-zZ-d1h"/>
+                                    <constraint firstAttribute="height" constant="80" id="RFe-P4-DYt"/>
+                                </constraints>
+                                <inset key="contentEdgeInsets" minX="16" minY="16" maxX="16" maxY="16"/>
+                                <state key="normal" title="Button" image="slr-camera-2-xxl"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="clickNewImageButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="O49-ir-8eu"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="4B8-sc-hFz" secondAttribute="bottom" constant="16" id="2Pa-U1-Rxv"/>
+                            <constraint firstItem="8hF-5h-fTm" firstAttribute="top" secondItem="LQi-6O-sCo" secondAttribute="bottom" constant="8" id="7vy-gB-bvu"/>
+                            <constraint firstItem="DIq-LM-uEx" firstAttribute="trailing" secondItem="LQi-6O-sCo" secondAttribute="trailing" id="RPL-XE-3Gf"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="s4x-Fd-ChU" secondAttribute="trailing" constant="16" id="SE1-FW-QZ8"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8hF-5h-fTm" secondAttribute="trailing" constant="16" id="VVw-n7-hG1"/>
+                            <constraint firstItem="DIq-LM-uEx" firstAttribute="bottom" secondItem="s4x-Fd-ChU" secondAttribute="bottom" id="X4x-9a-3Wb"/>
+                            <constraint firstItem="8hF-5h-fTm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="ZVR-GM-BOR"/>
+                            <constraint firstItem="LQi-6O-sCo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="ekk-Ul-wPW"/>
+                            <constraint firstItem="LQi-6O-sCo" firstAttribute="top" secondItem="s4x-Fd-ChU" secondAttribute="bottom" constant="12" id="knd-Zd-3cX"/>
+                            <constraint firstItem="s4x-Fd-ChU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="kqb-cJ-BP5"/>
+                            <constraint firstItem="DIq-LM-uEx" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" symbolic="YES" id="r7z-8s-Ysb"/>
+                            <constraint firstItem="4B8-sc-hFz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="txo-0Y-LBf"/>
+                            <constraint firstItem="s4x-Fd-ChU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="wRI-0M-coz"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4B8-sc-hFz" secondAttribute="trailing" constant="16" id="yHU-z4-srH"/>
+                            <constraint firstItem="4B8-sc-hFz" firstAttribute="top" relation="greaterThanOrEqual" secondItem="8hF-5h-fTm" secondAttribute="bottom" constant="16" id="yuA-Tk-igZ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="LQi-6O-sCo" secondAttribute="trailing" constant="16" id="zNZ-FI-zP5"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Профиль" id="JJx-MG-aWr">
+                        <barButtonItem key="backBarButtonItem" title="Назад" id="srx-p7-414"/>
+                        <barButtonItem key="leftBarButtonItem" title="Назад" id="r8f-wj-IWt">
+                            <connections>
+                                <action selector="backButton:" destination="BYZ-38-t0r" id="3JY-36-Gjj"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="editButton" destination="4B8-sc-hFz" id="aFR-gs-t8W"/>
+                        <outlet property="newImageButton" destination="DIq-LM-uEx" id="Ws0-XM-XUe"/>
+                        <outlet property="userImage" destination="s4x-Fd-ChU" id="DXl-xQ-ofD"/>
+                        <outlet property="userNameLabel" destination="LQi-6O-sCo" id="0Qk-3b-4xU"/>
+                        <outlet property="userProfileLabel" destination="8hF-5h-fTm" id="F9e-LJ-l9F"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2811" y="-668"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="placeholder-user" width="600" height="600"/>
+        <image name="slr-camera-2-xxl" width="256" height="256"/>
+    </resources>
+</document>
