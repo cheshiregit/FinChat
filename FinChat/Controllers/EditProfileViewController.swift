@@ -62,6 +62,14 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         startSaving()
     }
     
+    @IBAction func textFieldEditingChanged(_ sender: Any) {
+        self.buttonsEnabled(state: true)
+    }
+    
+    @objc func textViewEnabled() {
+        buttonsEnabled(state: true)
+    }
+    
     func saveUserData() {
         let userProfile = Profile.init(userName: userNameTextField.text, aboutUser: aboutUserTextView.text, userImage: userImage.image)
         print(userProfile)
@@ -81,17 +89,20 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         })
     }
     
+    func buttonsEnabled(state: Bool) {
+        gcdButton.isEnabled = state
+        operationButton.isEnabled = state
+    }
+    
     func startSaving() {
         activityIndicator.isHidden = false
-        gcdButton.isEnabled = false
-        operationButton.isEnabled = false
+        self.buttonsEnabled(state: false)
         activityIndicator.startAnimating()
     }
     
     func finishSaving() {
         activityIndicator.stopAnimating()
-        gcdButton.isEnabled = true
-        operationButton.isEnabled = true
+        self.buttonsEnabled(state: true)
         activityIndicator.isHidden = true
     }
     
@@ -128,6 +139,21 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         userImage.clipsToBounds = true
         newImageButton.layer.cornerRadius = newImageButton.frame.size.width / 2
         newImageButton.clipsToBounds = true
+        self.refreshData()
+        self.buttonsEnabled(state: false)
+        NotificationCenter.default.addObserver(self, selector: #selector(textViewEnabled), name: UITextView.textDidChangeNotification, object: aboutUserTextView)
+    }
+    
+    func refreshData() {
+        dataManager.readData(response: { (profile, responce) in
+            if responce == SuccessStatus.Success {
+                DispatchQueue.main.async(execute: {
+                    self.userNameTextField.text = profile.userName
+                    self.aboutUserTextView.text = profile.aboutUser
+                    self.userImage.image = profile.userImage
+                })
+            }
+        })
     }
     
     func openGallary()
@@ -159,6 +185,7 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
             return
         }
         userImage.image = selectedImage
+        self.buttonsEnabled(state: true)
         dismiss(animated: true, completion: nil)
     }
 }
