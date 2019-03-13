@@ -43,6 +43,11 @@ class ThemesViewControllerSwift: UIViewController {
         view.backgroundColor = color
         themesClosure?(color)
         UINavigationBar.appearance().barTintColor = color
+        let globalQueue = DispatchQueue.global(qos: .utility)
+        globalQueue.async {
+            print("themes with GCD")
+            UserDefaults.standard.setColor(color: color, forKey: "Theme")
+        }
         UserDefaults.standard.setColor(color: color, forKey: "Theme")
         // костыль для мгновенного обновления navigation bar нашел на stackoverflow
         // https://stackoverflow.com/questions/15024037/updating-navigation-bar-after-a-change-using-uiappearance
