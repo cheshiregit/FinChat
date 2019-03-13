@@ -58,6 +58,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         print("ViewDidLoad Frame кнопки 'Редактировать': \(editButton.frame)")
         //Здесь контроллер загрузился в память, у элементов, в частности кнопки, есть начальная позиция (initial position)
         refreshData()
+        newImageButton.isEnabled = false
     }
     
     func refreshData() {
@@ -77,6 +78,11 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         isLogging()
         print("ViewDidAppear Frame кнопки 'Редактировать': \(editButton.frame)")
         //Здесь уже были закончены все расчеты точного расположения элементов и метод вызван после того как View отобразилась
+        //refreshData()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
         refreshData()
     }
     

@@ -255,6 +255,28 @@
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="ceq-3X-tIk">
                                 <rect key="frame" x="177.5" y="323.5" width="20" height="20"/>
                             </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7tA-dY-7kL">
+                                <rect key="frame" x="267" y="291" width="60" height="60"/>
+                                <color key="backgroundColor" red="0.20383259649999999" green="0.463572979" blue="0.97398728130000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="7tA-dY-7kL" secondAttribute="height" multiplier="1:1" id="nUn-sB-kF2"/>
+                                    <constraint firstAttribute="height" constant="60" id="yk4-d4-Jt8"/>
+                                </constraints>
+                                <inset key="contentEdgeInsets" minX="16" minY="16" maxX="16" maxY="16"/>
+                                <state key="normal" title="Button" image="slr-camera-2-xxl"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="clickNewImageButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uhU-NT-eJC"/>
+                                    <action selector="newImageButton:" destination="IDy-Vh-5Er" eventType="touchUpInside" id="vb3-D5-G0R"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -272,13 +294,16 @@
                             <constraint firstItem="r54-1L-80G" firstAttribute="leading" secondItem="nH1-cF-HnF" secondAttribute="leading" constant="16" id="Lq9-LX-eje"/>
                             <constraint firstItem="BJC-RI-gTC" firstAttribute="leading" secondItem="nH1-cF-HnF" secondAttribute="leading" id="N1r-F6-y21"/>
                             <constraint firstItem="v1Z-ll-o5z" firstAttribute="leading" secondItem="nH1-cF-HnF" secondAttribute="leading" constant="32" id="Q46-Xx-ZO0"/>
+                            <constraint firstItem="7tA-dY-7kL" firstAttribute="bottom" secondItem="37o-xC-quX" secondAttribute="bottom" id="Ufp-De-qnS"/>
                             <constraint firstItem="37o-xC-quX" firstAttribute="top" secondItem="BJC-RI-gTC" secondAttribute="bottom" constant="8" id="YjI-NC-Hgy"/>
                             <constraint firstItem="37o-xC-quX" firstAttribute="leading" secondItem="nH1-cF-HnF" secondAttribute="leading" constant="48" id="ZBL-mu-Tfg"/>
                             <constraint firstItem="dGY-cg-aW4" firstAttribute="top" secondItem="o40-oF-6mV" secondAttribute="bottom" constant="8" id="bdL-fv-RSv"/>
                             <constraint firstItem="nH1-cF-HnF" firstAttribute="trailing" secondItem="3d0-p0-LYh" secondAttribute="trailing" constant="32" id="eWd-Tl-eCX"/>
+                            <constraint firstItem="7tA-dY-7kL" firstAttribute="trailing" secondItem="37o-xC-quX" secondAttribute="trailing" id="jQV-mN-e6P"/>
                             <constraint firstAttribute="trailing" secondItem="BJC-RI-gTC" secondAttribute="trailing" id="jdL-ba-SzK"/>
                             <constraint firstItem="dGY-cg-aW4" firstAttribute="leading" secondItem="nH1-cF-HnF" secondAttribute="leading" constant="16" id="qQa-YW-tQj"/>
                             <constraint firstItem="nH1-cF-HnF" firstAttribute="bottom" secondItem="3d0-p0-LYh" secondAttribute="bottom" constant="32" id="sD1-J7-Pfe"/>
+                            <constraint firstItem="7tA-dY-7kL" firstAttribute="width" secondItem="7tA-dY-7kL" secondAttribute="height" multiplier="1:1" id="sRw-eH-dem"/>
                             <constraint firstItem="BJC-RI-gTC" firstAttribute="top" secondItem="nH1-cF-HnF" secondAttribute="top" id="t3U-VD-OfX"/>
                             <constraint firstItem="49P-vL-3u3" firstAttribute="top" secondItem="r54-1L-80G" secondAttribute="bottom" constant="8" id="tdY-ig-FLb"/>
                             <constraint firstItem="o40-oF-6mV" firstAttribute="top" secondItem="37o-xC-quX" secondAttribute="bottom" constant="8" id="uLG-hG-OuQ"/>
@@ -290,6 +315,7 @@
                         <outlet property="aboutUserTextView" destination="49P-vL-3u3" id="32K-eJ-64q"/>
                         <outlet property="activityIndicator" destination="ceq-3X-tIk" id="cX4-Yz-QO3"/>
                         <outlet property="gcdButton" destination="v1Z-ll-o5z" id="RDX-I0-FO5"/>
+                        <outlet property="newImageButton" destination="7tA-dY-7kL" id="dmZ-vb-8Cj"/>
                         <outlet property="operationButton" destination="3d0-p0-LYh" id="rwu-kz-K6R"/>
                         <outlet property="userImage" destination="37o-xC-quX" id="MSM-tU-BMT"/>
                         <outlet property="userNameTextField" destination="dGY-cg-aW4" id="gBa-VU-WoQ"/>
