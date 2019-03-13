@@ -44,7 +44,6 @@ class EditProfileViewController: UIViewController {
                 DispatchQueue.main.async(execute: {
                     self.finishSaving()
                     self.showSuccessAlert()
-                    self.dismiss(animated: true, completion: nil)
                 })
             }
             else {
@@ -72,7 +71,7 @@ class EditProfileViewController: UIViewController {
     
     func showSuccessAlert() {
         let successAlert = UIAlertController(title: "Данные сохранены", message: nil, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "OK", style: .default)
+        let okAction = UIAlertAction(title: "OK", style: .default) { _ in self.dismiss(animated: true, completion: nil)}
         
         successAlert.addAction(okAction)
         

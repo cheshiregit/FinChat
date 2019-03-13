@@ -45,6 +45,8 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     var imagePicker = UIImagePickerController()
     
+    private var dataManager: DataManager = GCDDataManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         isLogging()
@@ -55,6 +57,19 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         imagePicker.delegate = self
         print("ViewDidLoad Frame кнопки 'Редактировать': \(editButton.frame)")
         //Здесь контроллер загрузился в память, у элементов, в частности кнопки, есть начальная позиция (initial position)
+        refreshData()
+    }
+    
+    func refreshData() {
+        dataManager.readData(response: { (profile, responce) in
+            if responce == SuccessStatus.Success {
+                DispatchQueue.main.async(execute: {
+                    self.userNameLabel.text = profile.userName
+                    self.userProfileLabel.text = profile.aboutUser
+                    self.userImage.image = profile.userImage
+                })
+            }
+        })
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -62,6 +77,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         isLogging()
         print("ViewDidAppear Frame кнопки 'Редактировать': \(editButton.frame)")
         //Здесь уже были закончены все расчеты точного расположения элементов и метод вызван после того как View отобразилась
+        refreshData()
     }
     
     required init?(coder aDecoder: NSCoder) {
