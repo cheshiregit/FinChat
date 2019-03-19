@@ -142,6 +142,10 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         self.refreshData()
         self.buttonsEnabled(state: false)
         NotificationCenter.default.addObserver(self, selector: #selector(textViewEnabled), name: UITextView.textDidChangeNotification, object: aboutUserTextView)
+        aboutUserTextView.layer.borderWidth = 1.0
+        aboutUserTextView.layer.borderColor = UIColor.lightGray.cgColor
+        aboutUserTextView.layer.cornerRadius = 8
+        aboutUserTextView.clipsToBounds = true
         //
         let notifier = NotificationCenter.default
         notifier.addObserver(self,
