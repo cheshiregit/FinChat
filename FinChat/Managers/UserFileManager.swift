@@ -9,6 +9,8 @@
 import Foundation
 
 class UserFileManager: NSObject {
+//    static let paths = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
+//    static let documentsDirectory = paths[0]
     static let temporaryDirectory = FileManager.default.temporaryDirectory
     static let fileName = "UserProfile.txt"
     static let filePath = temporaryDirectory.appendingPathComponent(fileName)

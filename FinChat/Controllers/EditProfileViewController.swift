@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EditProfileViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class EditProfileViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, UITextViewDelegate {
     
     @IBOutlet var userNameTextField: UITextField!
     @IBOutlet var aboutUserTextView: UITextView!
@@ -142,6 +142,38 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         self.refreshData()
         self.buttonsEnabled(state: false)
         NotificationCenter.default.addObserver(self, selector: #selector(textViewEnabled), name: UITextView.textDidChangeNotification, object: aboutUserTextView)
+        //
+        let notifier = NotificationCenter.default
+        notifier.addObserver(self,
+                             selector: #selector(EditProfileViewController.keyboardWillShowNotification(_:)),
+                             name: UIWindow.keyboardWillShowNotification,
+                             object: nil)
+        notifier.addObserver(self,
+                             selector: #selector(EditProfileViewController.keyboardWillHideNotification(_:)),
+                             name: UIWindow.keyboardWillHideNotification,
+                             object: nil)
+        //
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard (_:)))
+        self.view.addGestureRecognizer(tapGesture)
+        userNameTextField.delegate = self
+        aboutUserTextView.delegate = self
+    }
+    
+    @objc func dismissKeyboard (_ sender: UITapGestureRecognizer) {
+        userNameTextField.endEditing(true)
+        aboutUserTextView.endEditing(true)
+    }
+    
+    @objc func keyboardWillShowNotification(_ notification: NSNotification) {
+        print("keyboardWillShow")
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            let keyboardHeight = keyboardSize.height
+            self.view.frame.origin.y = -1.0 * keyboardHeight
+        }
+    }
+    
+    @objc func keyboardWillHideNotification(_ notification: NSNotification) {
+        self.view.frame.origin.y = 0
     }
     
     func refreshData() {
