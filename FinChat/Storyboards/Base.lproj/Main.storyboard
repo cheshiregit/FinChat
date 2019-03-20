@@ -131,7 +131,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Vue-cW-hUe">
-                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="458"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="conversationCell" rowHeight="70" id="ygh-q5-PUQ" customClass="ConversationCell" customModule="FinChat" customModuleProvider="target">
@@ -161,18 +161,47 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="100" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nYO-ah-I9H">
+                                <rect key="frame" x="16" y="530" width="236" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Onl-Wr-4r8">
+                                <rect key="frame" x="268" y="530" width="36" height="30"/>
+                                <state key="normal" title="Send"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="sendButtonClick:" destination="eZT-3E-xV6" eventType="touchUpInside" id="XMI-l7-2GC"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Vue-cW-hUe" firstAttribute="top" secondItem="AVg-iZ-JGc" secondAttribute="top" id="6Q5-Ds-13o"/>
+                            <constraint firstItem="AVg-iZ-JGc" firstAttribute="trailing" secondItem="Onl-Wr-4r8" secondAttribute="trailing" constant="16" id="7R9-b9-AsV"/>
                             <constraint firstItem="Vue-cW-hUe" firstAttribute="leading" secondItem="AVg-iZ-JGc" secondAttribute="leading" id="Iow-Gv-qHm"/>
                             <constraint firstItem="AVg-iZ-JGc" firstAttribute="trailing" secondItem="Vue-cW-hUe" secondAttribute="trailing" id="M7p-bA-Dtq"/>
-                            <constraint firstItem="AVg-iZ-JGc" firstAttribute="bottom" secondItem="Vue-cW-hUe" secondAttribute="bottom" id="hbQ-4n-YzO"/>
+                            <constraint firstItem="nYO-ah-I9H" firstAttribute="top" secondItem="Vue-cW-hUe" secondAttribute="bottom" constant="8" id="P6y-qP-PPR"/>
+                            <constraint firstItem="AVg-iZ-JGc" firstAttribute="bottom" secondItem="nYO-ah-I9H" secondAttribute="bottom" constant="8" id="Peb-i0-rsq"/>
+                            <constraint firstItem="nYO-ah-I9H" firstAttribute="leading" secondItem="AVg-iZ-JGc" secondAttribute="leading" constant="16" id="Pzd-0q-hLe"/>
+                            <constraint firstItem="AVg-iZ-JGc" firstAttribute="bottom" secondItem="Onl-Wr-4r8" secondAttribute="bottom" constant="8" id="Smr-xM-cVL"/>
+                            <constraint firstItem="Onl-Wr-4r8" firstAttribute="top" secondItem="Vue-cW-hUe" secondAttribute="bottom" constant="8" id="mml-ac-bQU"/>
+                            <constraint firstItem="Onl-Wr-4r8" firstAttribute="leading" secondItem="nYO-ah-I9H" secondAttribute="trailing" constant="16" id="nxG-PZ-dEf"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="AVg-iZ-JGc"/>
                     </view>
                     <connections>
                         <outlet property="conversationTableView" destination="Vue-cW-hUe" id="O8H-j4-e61"/>
+                        <outlet property="messageTextField" destination="nYO-ah-I9H" id="UKY-av-Hmy"/>
+                        <outlet property="sendMessageButton" destination="Onl-Wr-4r8" id="YRC-3H-VWO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i1B-Gh-PuP" userLabel="First Responder" sceneMemberID="firstResponder"/>

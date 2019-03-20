@@ -17,6 +17,9 @@
 		301EC575220CC520003BEDEF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 301EC573220CC520003BEDEF /* Main.storyboard */; };
 		301EC577220CC522003BEDEF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 301EC576220CC522003BEDEF /* Assets.xcassets */; };
 		301EC57A220CC522003BEDEF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 301EC578220CC522003BEDEF /* LaunchScreen.storyboard */; };
+		305A6E322241733F0076DFBA /* MultipeerCommunicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305A6E312241733F0076DFBA /* MultipeerCommunicator.swift */; };
+		305A6E34224174C20076DFBA /* CommunicationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305A6E33224174C20076DFBA /* CommunicationManager.swift */; };
+		305A6E3622417F4C0076DFBA /* MessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305A6E3522417F4C0076DFBA /* MessageModel.swift */; };
 		3070BF76222C980200D584CD /* ThemesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3070BF75222C980200D584CD /* ThemesViewController.m */; };
 		3070BF7A222DD73F00D584CD /* Themes.m in Sources */ = {isa = PBXBuildFile; fileRef = 3070BF79222DD73F00D584CD /* Themes.m */; };
 		3070BF7C222FBDA000D584CD /* ThemesViewControllerSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3070BF7B222FBDA000D584CD /* ThemesViewControllerSwift.swift */; };
@@ -47,6 +50,9 @@
 		301EC576220CC522003BEDEF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		301EC579220CC522003BEDEF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		301EC57B220CC522003BEDEF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		305A6E312241733F0076DFBA /* MultipeerCommunicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipeerCommunicator.swift; sourceTree = "<group>"; };
+		305A6E33224174C20076DFBA /* CommunicationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunicationManager.swift; sourceTree = "<group>"; };
+		305A6E3522417F4C0076DFBA /* MessageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageModel.swift; sourceTree = "<group>"; };
 		3070BF73222C980100D584CD /* FinChat-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FinChat-Bridging-Header.h"; sourceTree = "<group>"; };
 		3070BF74222C980200D584CD /* ThemesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThemesViewController.h; sourceTree = "<group>"; };
 		3070BF75222C980200D584CD /* ThemesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThemesViewController.m; sourceTree = "<group>"; };
@@ -98,6 +104,8 @@
 		301EC56E220CC520003BEDEF /* FinChat */ = {
 			isa = PBXGroup;
 			children = (
+				305A6E312241733F0076DFBA /* MultipeerCommunicator.swift */,
+				305A6E33224174C20076DFBA /* CommunicationManager.swift */,
 				30C32D1922197378003DBC00 /* Extensions */,
 				30DFE9012238393B00757837 /* Controllers */,
 				30DFE9002238391500757837 /* Models */,
@@ -164,6 +172,7 @@
 			children = (
 				3002DC1822247BEB009753EF /* SellModel.swift */,
 				30DFE9022238398C00757837 /* ProfileModel.swift */,
+				305A6E3522417F4C0076DFBA /* MessageModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -256,6 +265,7 @@
 			files = (
 				3002DC1722242253009753EF /* CustomTableViewCell.swift in Sources */,
 				30AC4C2F2238DB62005C4D76 /* DataManager.swift in Sources */,
+				305A6E34224174C20076DFBA /* CommunicationManager.swift in Sources */,
 				300179A822259C9A00E39CBD /* ConversationCell.swift in Sources */,
 				30DFE8FD2237D13A00757837 /* GCDDataManager.swift in Sources */,
 				3070BF7E222FC3A800D584CD /* UserDefaultsColor.swift in Sources */,
@@ -271,6 +281,8 @@
 				3070BF7A222DD73F00D584CD /* Themes.m in Sources */,
 				30C32D1D2219752D003DBC00 /* UIImageView+IBDesignable.swift in Sources */,
 				301EC570220CC520003BEDEF /* AppDelegate.swift in Sources */,
+				305A6E3622417F4C0076DFBA /* MessageModel.swift in Sources */,
+				305A6E322241733F0076DFBA /* MultipeerCommunicator.swift in Sources */,
 				30C32D1B221973DF003DBC00 /* UIButton+IBDesignable.swift in Sources */,
 				30DFE8FF2237D15300757837 /* OperationDataManager.swift in Sources */,
 				3070BF80222FDFAD00D584CD /* ThemesSwift.swift in Sources */,

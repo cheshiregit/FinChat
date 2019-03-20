@@ -9,13 +9,15 @@
 import Foundation
 
 struct CellModel {
+    var userID : String?
     var name: String?
-    var message: String?
+    var message: [MessageModel]
     var date: Date?
     var online: Bool
     var hasUreadMessages: Bool
     
-    init(name: String, message: String?, date: Date, online: Bool, hasUnreadMessages: Bool) {
+    init(userID: String, name: String, message: [MessageModel], date: Date, online: Bool, hasUnreadMessages: Bool) {
+        self.userID = userID
         self.name = name
         self.message = message
         self.date = date
