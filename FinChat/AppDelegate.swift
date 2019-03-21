@@ -13,6 +13,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     
+    var coredata = CoreDataStack()
+    
     var state: String = ""
     
     var temporaryState: String {
@@ -46,6 +48,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         logging()
+//        let user = AppUser.issertAppUser(in: coredata.mainContext)
+//        try! coredata.mainContext.save()
+//        print(user)
+        
+//        let model = coredata.managedObjectModel
+//        let userr = AppUser.fetchRequestAppUser(model: model)
+//        let result = try! coredata.mainContext.fetch(userr!)
+//        print(result.first!.name)
+        
+        
+        
         return true
     }
 

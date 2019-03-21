@@ -20,6 +20,8 @@
 		305A6E322241733F0076DFBA /* MultipeerCommunicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305A6E312241733F0076DFBA /* MultipeerCommunicator.swift */; };
 		305A6E34224174C20076DFBA /* CommunicationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305A6E33224174C20076DFBA /* CommunicationManager.swift */; };
 		305A6E3622417F4C0076DFBA /* MessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305A6E3522417F4C0076DFBA /* MessageModel.swift */; };
+		305A6E382242B03F0076DFBA /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305A6E372242B03F0076DFBA /* CoreDataStack.swift */; };
+		305A6E3B2242B0B40076DFBA /* AppUserModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 305A6E392242B0B40076DFBA /* AppUserModel.xcdatamodeld */; };
 		3070BF76222C980200D584CD /* ThemesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3070BF75222C980200D584CD /* ThemesViewController.m */; };
 		3070BF7A222DD73F00D584CD /* Themes.m in Sources */ = {isa = PBXBuildFile; fileRef = 3070BF79222DD73F00D584CD /* Themes.m */; };
 		3070BF7C222FBDA000D584CD /* ThemesViewControllerSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3070BF7B222FBDA000D584CD /* ThemesViewControllerSwift.swift */; };
@@ -53,6 +55,8 @@
 		305A6E312241733F0076DFBA /* MultipeerCommunicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipeerCommunicator.swift; sourceTree = "<group>"; };
 		305A6E33224174C20076DFBA /* CommunicationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunicationManager.swift; sourceTree = "<group>"; };
 		305A6E3522417F4C0076DFBA /* MessageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageModel.swift; sourceTree = "<group>"; };
+		305A6E372242B03F0076DFBA /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		305A6E3A2242B0B40076DFBA /* AppUserModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AppUserModel.xcdatamodel; sourceTree = "<group>"; };
 		3070BF73222C980100D584CD /* FinChat-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FinChat-Bridging-Header.h"; sourceTree = "<group>"; };
 		3070BF74222C980200D584CD /* ThemesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThemesViewController.h; sourceTree = "<group>"; };
 		3070BF75222C980200D584CD /* ThemesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThemesViewController.m; sourceTree = "<group>"; };
@@ -119,6 +123,8 @@
 				301EC576220CC522003BEDEF /* Assets.xcassets */,
 				301EC578220CC522003BEDEF /* LaunchScreen.storyboard */,
 				301EC57B220CC522003BEDEF /* Info.plist */,
+				305A6E372242B03F0076DFBA /* CoreDataStack.swift */,
+				305A6E392242B0B40076DFBA /* AppUserModel.xcdatamodeld */,
 			);
 			path = FinChat;
 			sourceTree = "<group>";
@@ -278,9 +284,11 @@
 				30DFE9032238398C00757837 /* ProfileModel.swift in Sources */,
 				30DFE8FA2237CC2E00757837 /* EditProfileViewController.swift in Sources */,
 				3002DC1522240B83009753EF /* ConversationsListViewController.swift in Sources */,
+				305A6E382242B03F0076DFBA /* CoreDataStack.swift in Sources */,
 				3070BF7A222DD73F00D584CD /* Themes.m in Sources */,
 				30C32D1D2219752D003DBC00 /* UIImageView+IBDesignable.swift in Sources */,
 				301EC570220CC520003BEDEF /* AppDelegate.swift in Sources */,
+				305A6E3B2242B0B40076DFBA /* AppUserModel.xcdatamodeld in Sources */,
 				305A6E3622417F4C0076DFBA /* MessageModel.swift in Sources */,
 				305A6E322241733F0076DFBA /* MultipeerCommunicator.swift in Sources */,
 				30C32D1B221973DF003DBC00 /* UIButton+IBDesignable.swift in Sources */,
@@ -502,6 +510,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		305A6E392242B0B40076DFBA /* AppUserModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				305A6E3A2242B0B40076DFBA /* AppUserModel.xcdatamodel */,
+			);
+			currentVersion = 305A6E3A2242B0B40076DFBA /* AppUserModel.xcdatamodel */;
+			path = AppUserModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 301EC564220CC520003BEDEF /* Project object */;
 }
