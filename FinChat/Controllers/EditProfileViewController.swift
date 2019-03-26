@@ -63,8 +63,10 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         
         startSaving()
         CoreDataManager.shared.saveUserProfileState(profile: self.profileInfo(), completion: { [weak self] in
-            self?.finishSaving()
-            self?.showSuccessAlert()
+            DispatchQueue.main.async(execute: {
+                self?.finishSaving()
+                self?.showSuccessAlert()
+            })
         })
     }
     
@@ -149,7 +151,7 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         userImage.clipsToBounds = true
         newImageButton.layer.cornerRadius = newImageButton.frame.size.width / 2
         newImageButton.clipsToBounds = true
-        self.refreshData()
+        self.refreshCoreData()
         self.buttonsEnabled(state: false)
         NotificationCenter.default.addObserver(self, selector: #selector(textViewEnabled), name: UITextView.textDidChangeNotification, object: aboutUserTextView)
         aboutUserTextView.layer.borderWidth = 1.0
@@ -188,6 +190,21 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     
     @objc func keyboardWillHideNotification(_ notification: NSNotification) {
         self.view.frame.origin.y = 0
+    }
+    
+    func refreshCoreData() {
+        dataManager.readData(response: { (profile, responce) in
+            if responce == SuccessStatus.Success {
+                DispatchQueue.main.async(execute: {
+                    //                    self.userNameLabel.text = profile.userName
+                    //                    self.userProfileLabel.text = profile.aboutUser
+                    //                    self.userImage.image = profile.userImage
+                    self.userNameTextField.text = CoreDataManager.shared.getUserProfileState().userName
+                    self.aboutUserTextView.text = CoreDataManager.shared.getUserProfileState().aboutUser
+                    self.userImage.image = CoreDataManager.shared.getUserProfileState().userImage
+                })
+            }
+        })
     }
     
     func refreshData() {
