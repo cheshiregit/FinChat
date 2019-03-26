@@ -65,9 +65,12 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         dataManager.readData(response: { (profile, responce) in
             if responce == SuccessStatus.Success {
                 DispatchQueue.main.async(execute: {
-                    self.userNameLabel.text = profile.userName
-                    self.userProfileLabel.text = profile.aboutUser
-                    self.userImage.image = profile.userImage
+//                    self.userNameLabel.text = profile.userName
+//                    self.userProfileLabel.text = profile.aboutUser
+//                    self.userImage.image = profile.userImage
+                    self.userNameLabel.text = CoreDataManager.shared.getUserProfileState().userName
+                    self.userProfileLabel.text = CoreDataManager.shared.getUserProfileState().aboutUser
+                    self.userImage.image = CoreDataManager.shared.getUserProfileState().userImage
                 })
             }
         })

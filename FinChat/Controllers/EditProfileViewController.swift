@@ -57,9 +57,19 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     }
     
     @IBAction func operationButtonPressed(_ sender: Any) {
-        dataManager = OperationDataManager()
-        saveUserData()
+//        dataManager = OperationDataManager()
+//        saveUserData()
+//        startSaving()
+        
         startSaving()
+        CoreDataManager.shared.saveUserProfileState(profile: self.profileInfo(), completion: { [weak self] in
+            self?.finishSaving()
+            self?.showSuccessAlert()
+        })
+    }
+    
+    func profileInfo() -> Profile {
+        return Profile(userName: userNameTextField.text, aboutUser: aboutUserTextView.text, userImage: userImage.image)
     }
     
     @IBAction func textFieldEditingChanged(_ sender: Any) {

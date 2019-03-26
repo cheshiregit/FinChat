@@ -239,7 +239,7 @@
                                 <rect key="frame" x="207.5" y="602" width="135.5" height="33"/>
                                 <color key="backgroundColor" red="0.92530602216720581" green="0.91935306787490845" blue="0.34477129578590393" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="Operation">
+                                <state key="normal" title="CoreData">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>

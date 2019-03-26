@@ -12,7 +12,7 @@ import CoreData
 class CoreDataStack: NSObject {
     var storeUrl: URL {
         let documentsUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-        return documentsUrl.appendingPathComponent("MyStore.sqlite")
+        return documentsUrl.appendingPathComponent("MySecondStore.sqlite")
     }
     
     let dataModelName = "AppUserModel"
@@ -33,19 +33,27 @@ class CoreDataStack: NSObject {
         return coordinator
     }()
     
-    /*
+    
     lazy var masterContext: NSManagedObjectContext = {
         var masterContext = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
         masterContext.persistentStoreCoordinator = self.persistentStoreCoordinator
+        masterContext.mergePolicy = NSOverwriteMergePolicy
         return masterContext
     }()
-    */
     
     lazy var mainContext: NSManagedObjectContext = {
         var mainContext = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
         mainContext.persistentStoreCoordinator = self.persistentStoreCoordinator
         mainContext.mergePolicy = NSOverwriteMergePolicy
         return mainContext
+    }()
+    
+    lazy var saveContext: NSManagedObjectContext = {
+        var saveContext = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
+        saveContext.parent = self.mainContext
+        saveContext.mergePolicy = NSOverwriteMergePolicy
+        
+        return saveContext
     }()
     
     typealias SaveCompletion = () -> Void
@@ -69,45 +77,39 @@ class CoreDataStack: NSObject {
         }
     }
     
-    static func findOrInsertAppUser(in context: NSManagedObjectContext) -> AppUser? {
-        guard let model = context.persistentStoreCoordinator?.managedObjectModel else {
-            print("Model is not available")
-            assert(false)
-            return nil
-        }
-        var appUser: AppUser?
-        guard let fetchRequest = AppUser.fetchRequestAppUser(model: model) else {
-            return nil
-        }
-        
-        do {
-            let results = try context.fetch(fetchRequest)
-            assert(results.count < 2, "Multiple AppUsers found")
-            if let foundUser = results.first {
-                appUser = foundUser
-            }
-        } catch {
-                print("Failed to fetch AppUser")
-        }
-        if appUser == nil {
-            appUser = AppUser.issertAppUser(in: context)
-        }
-        
-        return appUser
-    }
 }
+
 
 extension AppUser {
     
-    static func issertAppUser(in context: NSManagedObjectContext) -> AppUser? {
+    static func findOrInsertAppUser(in context: NSManagedObjectContext) -> AppUser? {
+        let fetchRequest: NSFetchRequest<AppUser> = AppUser.fetchRequest()
+        var foundUser: AppUser? = nil
+        
+        context.performAndWait {
+            do {
+                
+                let result = try context.fetch(fetchRequest)
+                if let user = result.first {
+                    foundUser = user
+                }
+            } catch {
+                print("Error in fetching")
+            }
+            
+            if foundUser == nil {
+                foundUser = AppUser.insertAppUser(in: context)
+            }
+        }
+        return foundUser
+    }
+    
+    static func insertAppUser(in context: NSManagedObjectContext) -> AppUser? {
         guard let appUser = NSEntityDescription.insertNewObject(forEntityName: "AppUser", into: context) as? AppUser else { return nil }
-        appUser.name = "name one"
-        appUser.timestamp = Date()
+//        appUser.name = "name one"
+//        appUser.timestamp = Date()
         return appUser
     }
-}
-
-extension AppUser {
     
     static func fetchRequestAppUser(model: NSManagedObjectModel) -> NSFetchRequest<AppUser>? {
             let templateName = "AppUser"
