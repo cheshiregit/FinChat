@@ -142,10 +142,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="s8H-wD-UoT">
-                                                    <rect key="frame" x="5" y="5" width="197.5" height="48.5"/>
+                                                    <rect key="frame" x="5" y="5" width="202.5" height="48.5"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Привет. Что делаешь?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w5T-0l-9M3">
-                                                    <rect key="frame" x="15" y="10" width="177.5" height="38.5"/>
+                                                    <rect key="frame" x="20" y="10" width="177.5" height="38.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -153,7 +153,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="w5T-0l-9M3" firstAttribute="bottom" secondItem="s8H-wD-UoT" secondAttribute="bottom" constant="-5" id="9WF-Wc-oDS"/>
-                                                <constraint firstItem="w5T-0l-9M3" firstAttribute="leading" secondItem="s8H-wD-UoT" secondAttribute="leading" constant="10" id="EE3-6M-iS2"/>
+                                                <constraint firstItem="w5T-0l-9M3" firstAttribute="leading" secondItem="s8H-wD-UoT" secondAttribute="leading" constant="15" id="EE3-6M-iS2"/>
                                                 <constraint firstItem="w5T-0l-9M3" firstAttribute="top" secondItem="s8H-wD-UoT" secondAttribute="top" constant="5" id="Vkc-pS-oBo"/>
                                                 <constraint firstItem="w5T-0l-9M3" firstAttribute="trailing" secondItem="s8H-wD-UoT" secondAttribute="trailing" constant="-10" id="WtX-f8-92m"/>
                                                 <constraint firstItem="s8H-wD-UoT" firstAttribute="top" secondItem="Y3l-40-dUE" secondAttribute="top" constant="5" id="dW4-2p-uUx"/>

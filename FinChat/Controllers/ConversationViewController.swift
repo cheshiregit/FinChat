@@ -26,6 +26,7 @@ class ConversationViewController: UIViewController {
         self.navigationItem.title = conversationTitle
         conversationTableView.rowHeight = UITableView.automaticDimension
         conversationTableView.estimatedRowHeight = 50.0
+        self.conversationTableView.separatorColor = UIColor.clear
     }
     
 }
