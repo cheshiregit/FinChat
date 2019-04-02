@@ -28,6 +28,9 @@ class ConversationViewController: UIViewController, UITextFieldDelegate {
     
     var conversationTitle: String?
     
+    let incomingCellIdentifier = "IncomingMessageCell"
+    let outgoingCellIdentifier = "OutgoingMessageCell"
+    
     var messages = [MessageModel]()
     var communicationManager: CommunicationManager?
     var dialog: CellModel?
@@ -65,7 +68,7 @@ class ConversationViewController: UIViewController, UITextFieldDelegate {
         
         
         DispatchQueue.main.async {
-            self.conversationTableView.reloadData()
+            self.delegate?.reloadTableView()
             let indexPath = IndexPath(row: self.messages.count - 1 , section: 0)
             self.conversationTableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
         }
@@ -77,8 +80,12 @@ class ConversationViewController: UIViewController, UITextFieldDelegate {
         conversationTableView.delegate = self
         self.navigationItem.title = conversationTitle
         conversationTableView.rowHeight = UITableView.automaticDimension
-        conversationTableView.estimatedRowHeight = 60.0
+        conversationTableView.estimatedRowHeight = 50.0
         conversationTableView.separatorStyle = .none
+        //
+        self.communicationManager = CommunicationManager()
+        self.messageTextField.delegate = self
+        self.communicationManager?.conversationDelegate = self
         //
         let notifier = NotificationCenter.default
         notifier.addObserver(self,
@@ -93,6 +100,10 @@ class ConversationViewController: UIViewController, UITextFieldDelegate {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard (_:)))
         self.view.addGestureRecognizer(tapGesture)
         messageTextField.delegate = self
+    }
+    
+    deinit {
+        self.communicationManager = nil
     }
     
     @objc func dismissKeyboard (_ sender: UITapGestureRecognizer) {
@@ -115,13 +126,30 @@ class ConversationViewController: UIViewController, UITextFieldDelegate {
 extension ConversationViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return messages.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "conversationCell", for: indexPath) as! MessageCellConfiguratioin
-        cell.textMessage = textMessage
-        return cell as! UITableViewCell
+        
+        return configureCell(tableView: tableView, message: messages[indexPath.row])
+    }
+    
+    func configureCell(tableView: UITableView, message: MessageModel) -> UITableViewCell {
+        if message.isIncoming {
+            let cell = tableView.dequeueReusableCell(withIdentifier: incomingCellIdentifier) as! ConversationCell
+            cell.bubbleImageView.image = UIImage.init(named: "bubble_received")?.resizableImage(withCapInsets:
+                UIEdgeInsets(top: 17, left: 21, bottom: 17, right: 21),resizingMode: .stretch).withRenderingMode(.alwaysTemplate)
+            cell.bubbleImageView.tintColor = UIColor(white: 0.9, alpha: 1)
+            cell.messageLabel.text = message.text
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: outgoingCellIdentifier) as! ConversationCell
+            cell.bubbleImageView.image = UIImage.init(named: "bubble_sent")?.resizableImage(withCapInsets:
+                UIEdgeInsets(top: 17, left: 21, bottom: 17, right: 21),resizingMode: .stretch).withRenderingMode(.alwaysTemplate)
+            cell.bubbleImageView.tintColor = UIColor(red:0.08, green:0.49, blue:0.98, alpha:1.0)
+            cell.messageLabel.text = message.text
+            return cell
+        }
     }
 }
 

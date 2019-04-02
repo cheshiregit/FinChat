@@ -14,7 +14,10 @@ protocol MessageCellConfiguratioin: class {
 
 class ConversationCell: UITableViewCell, MessageCellConfiguratioin {
     
-    @IBOutlet weak var messageLabel: UILabel!
+    //bubbleImageView messageLabel
+    @IBOutlet var bubbleImageView: UIImageView!
+    @IBOutlet var messageLabel: UILabel!
+    
     
     var textMessage: String? {
         get {
