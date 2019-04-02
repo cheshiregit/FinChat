@@ -83,25 +83,30 @@ class CoreDataStack: NSObject {
 extension AppUser {
     
     static func findOrInsertAppUser(in context: NSManagedObjectContext) -> AppUser? {
-        let fetchRequest: NSFetchRequest<AppUser> = AppUser.fetchRequest()
-        var foundUser: AppUser? = nil
-        
-        context.performAndWait {
-            do {
-                
-                let result = try context.fetch(fetchRequest)
-                if let user = result.first {
-                    foundUser = user
-                }
-            } catch {
-                print("Error in fetching")
-            }
-            
-            if foundUser == nil {
-                foundUser = AppUser.insertAppUser(in: context)
-            }
+        guard let model = context.persistentStoreCoordinator?.managedObjectModel else {
+            print("Model is not available")
+            assert(false)
+            return nil
         }
-        return foundUser
+        var appUser: AppUser?
+        guard let fetchRequest = AppUser.fetchRequestAppUser(model: model) else {
+            return nil
+        }
+        
+        do {
+            let results = try context.fetch(fetchRequest)
+            assert(results.count < 2, "Multiple AppUsers found")
+            if let foundUser = results.first {
+                appUser = foundUser
+            }
+        } catch {
+            print("Failed to fetch AppUser")
+        }
+        if appUser == nil {
+            appUser = AppUser.insertAppUser(in: context)
+        }
+        
+        return appUser
     }
     
     static func insertAppUser(in context: NSManagedObjectContext) -> AppUser? {

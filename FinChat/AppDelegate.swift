@@ -56,7 +56,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        let userr = AppUser.fetchRequestAppUser(model: model)
 //        let result = try! coredata.mainContext.fetch(userr!)
 //        print(result.first!.name)
-        
+        print("Documents Directory: ", FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last ?? "Not Found!")
         
         
         return true
