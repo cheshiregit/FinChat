@@ -30,8 +30,8 @@ class CommunicationManager: NSObject, CommunicatorDelegate {
     }
     
     func didFoundUser(userID: String, userName: String?) {
-        
-        if var dialog = dialogs.first(where: {$0.userID == userID}) {
+        print("didFoundUser: userID: \(userID), userName: \(String(describing: userName))")
+        if let dialog = dialogs.first(where: {$0.userID == userID}) {
             dialog.online = true
         } else {
             let newDialog = CellModel(userID: userID, name: userName ?? "no name", message: [], date: Date(), online: true, hasUnreadMessages: false)
@@ -42,7 +42,7 @@ class CommunicationManager: NSObject, CommunicatorDelegate {
     }
     
     func didLostUser(userID: String) {
-        if var dialog = dialogs.first(where: {$0.userID == userID}) {
+        if let dialog = dialogs.first(where: {$0.userID == userID}) {
             dialog.online = false
         }
         delegate?.didUpdateDialogList(dialogs: dialogs)

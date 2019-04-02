@@ -53,6 +53,7 @@ class MultipeerCommunicator: NSObject, Communicator {
         super.init()
         self.advertiser?.delegate = self
         self.advertiser?.startAdvertisingPeer()
+        print("startAdvertisingPeer")
         self.browser?.delegate = self
         self.browser?.startBrowsingForPeers()
     }
@@ -71,6 +72,7 @@ class MultipeerCommunicator: NSObject, Communicator {
                 try session.send(data, toPeers: session.connectedPeers, with: .reliable)
                 completionHandler?(true, nil)
             } catch {
+                print("message not sending: \(error)")
                 completionHandler?(false, error )
             }
         }
@@ -95,6 +97,7 @@ class MultipeerCommunicator: NSObject, Communicator {
     }
 }
 
+//MARK: - MCNearbyServiceAdvertiserDelegate
 extension MultipeerCommunicator: MCNearbyServiceAdvertiserDelegate {
     
     func advertiser(_ advertiser: MCNearbyServiceAdvertiser, didNotStartAdvertisingPeer error: Error) {
@@ -112,6 +115,7 @@ extension MultipeerCommunicator: MCNearbyServiceAdvertiserDelegate {
     }
 }
 
+//MARK: - MCNearbyServiceBrowserDelegate
 extension MultipeerCommunicator: MCNearbyServiceBrowserDelegate {
     
     
@@ -128,7 +132,7 @@ extension MultipeerCommunicator: MCNearbyServiceBrowserDelegate {
     
     func browser(_ browser: MCNearbyServiceBrowser, foundPeer peerID: MCPeerID, withDiscoveryInfo info: [String : String]?) {
         if let session = self.getSession(displayName: peerID.displayName) {
-            if session.connectedPeers.contains(peerID) {
+            if !session.connectedPeers.contains(peerID) {
                 browser.invitePeer(peerID, to: session, withContext: nil, timeout: 10)
                 self.delegate?.didFoundUser(userID: peerID.displayName, userName: info?["userName"] ?? "Unidentified user")
             }
@@ -136,6 +140,7 @@ extension MultipeerCommunicator: MCNearbyServiceBrowserDelegate {
     }
 }
 
+//MARK: - MCSessionDelegate
 extension MultipeerCommunicator: MCSessionDelegate {
     
     func session(_ session: MCSession, didReceive stream: InputStream, withName streamName: String, fromPeer peerID: MCPeerID) {

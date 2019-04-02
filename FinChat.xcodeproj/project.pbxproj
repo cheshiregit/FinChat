@@ -11,7 +11,7 @@
 		300179A822259C9A00E39CBD /* ConversationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300179A722259C9A00E39CBD /* ConversationCell.swift */; };
 		3002DC1522240B83009753EF /* ConversationsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3002DC1422240B83009753EF /* ConversationsListViewController.swift */; };
 		3002DC1722242253009753EF /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3002DC1622242253009753EF /* CustomTableViewCell.swift */; };
-		3002DC1922247BEB009753EF /* SellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3002DC1822247BEB009753EF /* SellModel.swift */; };
+		3002DC1922247BEB009753EF /* CellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3002DC1822247BEB009753EF /* CellModel.swift */; };
 		301EC570220CC520003BEDEF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301EC56F220CC520003BEDEF /* AppDelegate.swift */; };
 		301EC572220CC520003BEDEF /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301EC571220CC520003BEDEF /* ProfileViewController.swift */; };
 		301EC575220CC520003BEDEF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 301EC573220CC520003BEDEF /* Main.storyboard */; };
@@ -42,7 +42,7 @@
 		300179A722259C9A00E39CBD /* ConversationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationCell.swift; sourceTree = "<group>"; };
 		3002DC1422240B83009753EF /* ConversationsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationsListViewController.swift; sourceTree = "<group>"; };
 		3002DC1622242253009753EF /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
-		3002DC1822247BEB009753EF /* SellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellModel.swift; sourceTree = "<group>"; };
+		3002DC1822247BEB009753EF /* CellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellModel.swift; sourceTree = "<group>"; };
 		301EC56C220CC520003BEDEF /* FinChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		301EC56F220CC520003BEDEF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		301EC571220CC520003BEDEF /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -170,7 +170,7 @@
 		30DFE9002238391500757837 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				3002DC1822247BEB009753EF /* SellModel.swift */,
+				3002DC1822247BEB009753EF /* CellModel.swift */,
 				30DFE9022238398C00757837 /* ProfileModel.swift */,
 				305A6E3522417F4C0076DFBA /* MessageModel.swift */,
 			);
@@ -270,7 +270,7 @@
 				30DFE8FD2237D13A00757837 /* GCDDataManager.swift in Sources */,
 				3070BF7E222FC3A800D584CD /* UserDefaultsColor.swift in Sources */,
 				3070BF76222C980200D584CD /* ThemesViewController.m in Sources */,
-				3002DC1922247BEB009753EF /* SellModel.swift in Sources */,
+				3002DC1922247BEB009753EF /* CellModel.swift in Sources */,
 				3001799E2225611800E39CBD /* ConversationViewController.swift in Sources */,
 				301EC572220CC520003BEDEF /* ProfileViewController.swift in Sources */,
 				3070BF7C222FBDA000D584CD /* ThemesViewControllerSwift.swift in Sources */,
