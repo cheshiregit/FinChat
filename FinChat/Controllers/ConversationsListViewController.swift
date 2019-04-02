@@ -112,8 +112,14 @@ extension ConversationsListViewController: UITableViewDataSource, UITableViewDel
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let personName = cellsOnline[indexPath.row].name
-        performSegue(withIdentifier: "showConversation", sender: personName)
+//        let personName = cellsOnline[indexPath.row].name
+//        performSegue(withIdentifier: "showConversation", sender: personName)
+        
+        if indexPath.section == 0 {
+            dialogCells[indexPath.section][indexPath.row].hasUnreadMessages = false
+        }
+        
+        performSegue(withIdentifier: "showConversation", sender: dialogCells[indexPath.section][indexPath.row])
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -121,8 +127,12 @@ extension ConversationsListViewController: UITableViewDataSource, UITableViewDel
         switch segue.identifier {
         case "showConversation":
             guard let vc = segue.destination as? ConversationViewController else { return }
-            guard let personName = sender as? String? else { return }
-            vc.conversationTitle = personName
+            guard let dialog = sender as? CellModel? else { return }
+            vc.conversationTitle = dialog?.name
+            vc.dialog = dialog
+            vc.delegate = self
+            vc.idUserTo = dialog?.userID
+            vc.messages = (dialog?.message)!
         case "themesSegue":
             guard let vc = segue.destination as? ThemesViewControllerSwift else { return }
             vc.themesClosure = { theme in
@@ -158,7 +168,7 @@ extension ConversationsListViewController: CommunicationManagerDelegate {
             sortDialogs()
             DispatchQueue.main.async {
                 self.tableView.reloadData()
-                self.communicationManager?.delegate?.didUpdateDialogList(dialogs: self.cellsOnline)
+                self.communicationManager?.delegate?.didUpdateDialogList(dialogs: self.cellsOnline) //need?
             }
         }
         
