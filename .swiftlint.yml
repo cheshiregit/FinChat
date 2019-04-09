@@ -1,3 +1,5 @@
 line_length:
 - 150 # warning
 - 200 # error
+disabled_rules:
+- trailing_whitespace
