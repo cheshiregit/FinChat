@@ -12,16 +12,16 @@ struct Profile: ProfileProtocol {
     var userName: String?
     var aboutUser: String?
     var userImage: UIImage?
-    
+
     init() {
-        
+
     }
-    
+
     init(userName: String?, aboutUser: String?, userImage: UIImage?) {
         self.userName = userName
         self.aboutUser = aboutUser
         self.userImage = userImage
-    } 
+    }
 }
 
 protocol ProfileProtocol {
@@ -29,4 +29,3 @@ protocol ProfileProtocol {
     var aboutUser: String? { get set }
     var userImage: UIImage? { get set }
 }
-

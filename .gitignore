@@ -1,4 +1,5 @@
 build/
+Pods/
 DerivedData/
 xcuserdata/
 *.xccheckout

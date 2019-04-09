@@ -12,9 +12,9 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    
+
     var state: String = ""
-    
+
     var temporaryState: String {
         switch UIApplication.shared.applicationState {
         case .active:
@@ -28,9 +28,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         return ""
     }
-    
+
     let loggingOn: Bool = false
-    
+
     func logging(_ function: String = #function) {
         if loggingOn {
             print("From \(state) to \(temporaryState)")
@@ -39,11 +39,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
 
-    func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+    func application(_ application: UIApplication,
+                     willFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
         logging()
         return true
     }
-    
+
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         logging()
         return true
@@ -69,6 +70,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         logging()
     }
 
-
 }
-

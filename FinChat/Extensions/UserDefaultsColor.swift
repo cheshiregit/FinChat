@@ -24,11 +24,11 @@ extension UserDefaults {
         }
         set(colorData, forKey: key)
     }
-    
+
     /*
     let defaults = UserDefaults.standard
     defaults.setColor(color: UIColor.red, forKey: "myColor") // set
     let myColor = defaults.colorForKey(key: "myColor") // get
     */
-    
+
 }

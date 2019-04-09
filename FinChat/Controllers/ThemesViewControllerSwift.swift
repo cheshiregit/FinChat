@@ -8,36 +8,35 @@
 
 import UIKit
 
-typealias themesClosure = (_ color: UIColor) -> (Void)
+typealias ThemesClosure = (_ color: UIColor) -> Void
 
 class ThemesViewControllerSwift: UIViewController {
-    
+
     var model = ThemesSwift()
-    var themesClosure: themesClosure?
-    
+    var themesClosure: ThemesClosure?
+
     @IBAction func closeButtonTapped(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
-    
+
     @IBAction func theme1Button(_ sender: Any) {
         changeColor(model.theme1)
     }
-    
+
     @IBAction func theme2Button(_ sender: Any) {
         changeColor(model.theme2)
     }
-    
+
     @IBAction func theme3Button(_ sender: Any) {
         changeColor(model.theme3)
     }
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         model = ThemesSwift()
         self.view.backgroundColor = UserDefaults.standard.colorForKey(key: "Theme")
     }
-    
+
     func changeColor(_ color: UIColor?) {
         guard let color = color else { return }
         view.backgroundColor = color
@@ -54,7 +53,7 @@ class ThemesViewControllerSwift: UIViewController {
         for window in UIApplication.shared.windows {
             for view in window.subviews {
                 view.removeFromSuperview()
-                window.addSubview(view);
+                window.addSubview(view)
             }
         }
     }

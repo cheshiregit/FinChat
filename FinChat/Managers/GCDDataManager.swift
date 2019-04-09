@@ -17,12 +17,12 @@ class GCDDataManager: DataManager {
             response(status)
         }
     }
-    
+
     func readData(response: @escaping ((Profile, SuccessStatus)) -> Void) {
         let globalQueue = DispatchQueue.global(qos: .utility)
         globalQueue.async {
             print("read GCD")
-            let status : (Profile, SuccessStatus) = UserFileManager.readFile()
+            let status: (Profile, SuccessStatus) = UserFileManager.readFile()
             response(status)
         }
     }

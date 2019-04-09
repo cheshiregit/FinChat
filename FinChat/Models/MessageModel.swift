@@ -11,7 +11,7 @@ import Foundation
 struct MessageModel {
     var text: String?
     var isIncoming: Bool
-    
+
     init(text: String?, isIncoming: Bool) {
         self.text = text
         self.isIncoming = isIncoming

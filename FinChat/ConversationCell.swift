@@ -13,12 +13,11 @@ protocol MessageCellConfiguratioin: class {
 }
 
 class ConversationCell: UITableViewCell, MessageCellConfiguratioin {
-    
+
     //bubbleImageView messageLabel
     @IBOutlet var bubbleImageView: UIImageView!
     @IBOutlet var messageLabel: UILabel!
-    
-    
+
     var textMessage: String? {
         get {
             return messageLabel.text!
@@ -27,20 +26,13 @@ class ConversationCell: UITableViewCell, MessageCellConfiguratioin {
             messageLabel.text = newVal
         }
     }
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
-        /*
-        NSLayoutConstraint(item: messageLabel, attribute: .leading, relatedBy: .equal, toItem: superview, attribute: .leadingMargin, multiplier: 1.0, constant: 0.0).isActive = true
-        NSLayoutConstraint(item: messageLabel, attribute: .trailing, relatedBy: .equal, toItem: superview, attribute: .trailingMargin, multiplier: 1.0, constant: 0.0).isActive = true
-        NSLayoutConstraint(item: messageLabel, attribute: .top, relatedBy: .equal, toItem: superview, attribute: .topMargin, multiplier: 1.0, constant: 0.0).isActive = true
-        NSLayoutConstraint(item: messageLabel, attribute: .bottom, relatedBy: .equal, toItem: superview, attribute: .bottomMargin, multiplier: 1.0, constant: 0.0).isActive = true
-        */
     }
-    
+
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
-    
-}
 
+}

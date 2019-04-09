@@ -9,11 +9,11 @@
 import Foundation
 
 class ThemesSwift {
-    
+
     var theme1: UIColor
     var theme2: UIColor
     var theme3: UIColor
-    
+
     init() {
         self.theme1 = UIColor.white
         self.theme2 = UIColor.init(red: 0.15, green: 0.2, blue: 0.3, alpha: 1)

@@ -12,20 +12,20 @@ class OperationDataManager: DataManager {
     func saveData(profile: Profile, response: @escaping (SuccessStatus) -> Void) {
         let queue = OperationQueue()
         queue.name = "com.finchat.saveOperation"
-        
+
         queue.addOperation({
             let status = UserFileManager.saveFile(profile: profile)
             print("Save Operation")
             response(status)
         })
     }
-    
+
     func readData(response: @escaping ((Profile, SuccessStatus)) -> Void) {
         let queue = OperationQueue()
         queue.name = "com.finchat.readOperation"
-        
+
         queue.addOperation({
-            let status : (Profile, SuccessStatus) = UserFileManager.readFile()
+            let status: (Profile, SuccessStatus) = UserFileManager.readFile()
             print("Read Operation")
             response(status)
         })

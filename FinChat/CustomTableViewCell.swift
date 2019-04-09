@@ -17,11 +17,11 @@ protocol ConversationCellConfiguratioin: class {
 }
 
 class CustomTableViewCell: UITableViewCell, ConversationCellConfiguratioin {
-    
+
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var messageLabel: UILabel!
-    
+
     var name: String? {
         get {
             return nameLabel.text!
@@ -30,7 +30,7 @@ class CustomTableViewCell: UITableViewCell, ConversationCellConfiguratioin {
             nameLabel.text = newVal
         }
     }
-    
+
     var message: String? {
         get {
             return messageLabel.text!
@@ -64,7 +64,7 @@ class CustomTableViewCell: UITableViewCell, ConversationCellConfiguratioin {
                 print("Error in yesterday unwrapping")
                 return
             }
-            if (newValue < yesterday) {
+            if newValue < yesterday {
                 let outputDateFormatter = DateFormatter()
                 outputDateFormatter.dateFormat = "dd MMM"
                 timeLabel.text = outputDateFormatter.string(from: newValue)
@@ -75,7 +75,7 @@ class CustomTableViewCell: UITableViewCell, ConversationCellConfiguratioin {
             }
         }
     }
-    
+
     var online: Bool {
         get {
             return true
@@ -88,7 +88,7 @@ class CustomTableViewCell: UITableViewCell, ConversationCellConfiguratioin {
             }
         }
     }
-    
+
     var hasUreadMessages: Bool {
         get {
             return true
