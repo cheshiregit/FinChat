@@ -17,6 +17,8 @@
 		301EC575220CC520003BEDEF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 301EC573220CC520003BEDEF /* Main.storyboard */; };
 		301EC577220CC522003BEDEF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 301EC576220CC522003BEDEF /* Assets.xcassets */; };
 		301EC57A220CC522003BEDEF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 301EC578220CC522003BEDEF /* LaunchScreen.storyboard */; };
+		303006E8225D5210007D5381 /* CommunicatorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303006E7225D5210007D5381 /* CommunicatorDelegate.swift */; };
+		303006EA225D523A007D5381 /* Communicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303006E9225D523A007D5381 /* Communicator.swift */; };
 		305A6E322241733F0076DFBA /* MultipeerCommunicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305A6E312241733F0076DFBA /* MultipeerCommunicator.swift */; };
 		305A6E34224174C20076DFBA /* CommunicationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305A6E33224174C20076DFBA /* CommunicationManager.swift */; };
 		305A6E3622417F4C0076DFBA /* MessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305A6E3522417F4C0076DFBA /* MessageModel.swift */; };
@@ -53,6 +55,8 @@
 		301EC576220CC522003BEDEF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		301EC579220CC522003BEDEF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		301EC57B220CC522003BEDEF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		303006E7225D5210007D5381 /* CommunicatorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunicatorDelegate.swift; sourceTree = "<group>"; };
+		303006E9225D523A007D5381 /* Communicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Communicator.swift; sourceTree = "<group>"; };
 		305A6E312241733F0076DFBA /* MultipeerCommunicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipeerCommunicator.swift; sourceTree = "<group>"; };
 		305A6E33224174C20076DFBA /* CommunicationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunicationManager.swift; sourceTree = "<group>"; };
 		305A6E3522417F4C0076DFBA /* MessageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageModel.swift; sourceTree = "<group>"; };
@@ -70,7 +74,7 @@
 		30AC4C2E2238DB62005C4D76 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		30C32D1A221973DF003DBC00 /* UIButton+IBDesignable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+IBDesignable.swift"; sourceTree = "<group>"; };
 		30C32D1C2219752D003DBC00 /* UIImageView+IBDesignable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+IBDesignable.swift"; sourceTree = "<group>"; };
-		30DFE8F92237CC2E00757837 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EditProfileViewController.swift; path = FinChat/Controllers/EditProfileViewController.swift; sourceTree = SOURCE_ROOT; };
+		30DFE8F92237CC2E00757837 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EditProfileViewController.swift; path = FinChat/PresentationLayer/Profile/EditProfileViewController.swift; sourceTree = SOURCE_ROOT; };
 		30DFE8FC2237D13A00757837 /* GCDDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCDDataManager.swift; sourceTree = "<group>"; };
 		30DFE8FE2237D15300757837 /* OperationDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationDataManager.swift; sourceTree = "<group>"; };
 		30DFE9022238398C00757837 /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
@@ -111,17 +115,12 @@
 		301EC56E220CC520003BEDEF /* FinChat */ = {
 			isa = PBXGroup;
 			children = (
-				305A6E312241733F0076DFBA /* MultipeerCommunicator.swift */,
-				305A6E33224174C20076DFBA /* CommunicationManager.swift */,
+				303006E1225D4DAA007D5381 /* ServiceLayer */,
+				303006E0225D4D9C007D5381 /* CoreLayer */,
+				303006DF225D4D7C007D5381 /* PresentationLayer */,
 				30C32D1922197378003DBC00 /* Extensions */,
-				30DFE9012238393B00757837 /* Controllers */,
-				30DFE9002238391500757837 /* Models */,
-				30DFE8FB2237D10F00757837 /* Managers */,
-				3070BF7F222FDFAD00D584CD /* ThemesSwift.swift */,
-				3070BF72222C8D4200D584CD /* Obj C */,
 				301EC56F220CC520003BEDEF /* AppDelegate.swift */,
-				3002DC1622242253009753EF /* CustomTableViewCell.swift */,
-				300179A722259C9A00E39CBD /* ConversationCell.swift */,
+				3070BF73222C980100D584CD /* FinChat-Bridging-Header.h */,
 				309C894E22352C93005C4E57 /* Storyboards */,
 				301EC576220CC522003BEDEF /* Assets.xcassets */,
 				301EC578220CC522003BEDEF /* LaunchScreen.storyboard */,
@@ -130,17 +129,105 @@
 			path = FinChat;
 			sourceTree = "<group>";
 		};
-		3070BF72222C8D4200D584CD /* Obj C */ = {
+		303006DF225D4D7C007D5381 /* PresentationLayer */ = {
 			isa = PBXGroup;
 			children = (
+				303006EC225D5371007D5381 /* Conversation */,
+				303006EB225D5356007D5381 /* ConversationsList */,
+				303006E6225D4F91007D5381 /* Models */,
+				303006E5225D4F3D007D5381 /* Profile */,
+				303006E4225D4EF3007D5381 /* Themes */,
+			);
+			path = PresentationLayer;
+			sourceTree = "<group>";
+		};
+		303006E0225D4D9C007D5381 /* CoreLayer */ = {
+			isa = PBXGroup;
+			children = (
+				303006E3225D4E6F007D5381 /* Multipeer */,
+				303006E2225D4DF8007D5381 /* Profile */,
+			);
+			path = CoreLayer;
+			sourceTree = "<group>";
+		};
+		303006E1225D4DAA007D5381 /* ServiceLayer */ = {
+			isa = PBXGroup;
+			children = (
+				305A6E33224174C20076DFBA /* CommunicationManager.swift */,
+			);
+			path = ServiceLayer;
+			sourceTree = "<group>";
+		};
+		303006E2225D4DF8007D5381 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				30DFE8FC2237D13A00757837 /* GCDDataManager.swift */,
+				30DFE8FE2237D15300757837 /* OperationDataManager.swift */,
+				30DFE9042238782500757837 /* UserFileManager.swift */,
+				30AC4C2E2238DB62005C4D76 /* DataManager.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		303006E3225D4E6F007D5381 /* Multipeer */ = {
+			isa = PBXGroup;
+			children = (
+				305A6E312241733F0076DFBA /* MultipeerCommunicator.swift */,
+				303006E7225D5210007D5381 /* CommunicatorDelegate.swift */,
+				303006E9225D523A007D5381 /* Communicator.swift */,
+			);
+			path = Multipeer;
+			sourceTree = "<group>";
+		};
+		303006E4225D4EF3007D5381 /* Themes */ = {
+			isa = PBXGroup;
+			children = (
+				3070BF7B222FBDA000D584CD /* ThemesViewControllerSwift.swift */,
 				3070BF77222DC06A00D584CD /* ThemesViewControllerDelegate.h */,
 				3070BF74222C980200D584CD /* ThemesViewController.h */,
 				3070BF75222C980200D584CD /* ThemesViewController.m */,
+			);
+			path = Themes;
+			sourceTree = "<group>";
+		};
+		303006E5225D4F3D007D5381 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				301EC571220CC520003BEDEF /* ProfileViewController.swift */,
+				30DFE8F92237CC2E00757837 /* EditProfileViewController.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		303006E6225D4F91007D5381 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3002DC1822247BEB009753EF /* CellModel.swift */,
+				30DFE9022238398C00757837 /* ProfileModel.swift */,
+				305A6E3522417F4C0076DFBA /* MessageModel.swift */,
+				3070BF7F222FDFAD00D584CD /* ThemesSwift.swift */,
 				3070BF78222DD73F00D584CD /* Themes.h */,
 				3070BF79222DD73F00D584CD /* Themes.m */,
-				3070BF73222C980100D584CD /* FinChat-Bridging-Header.h */,
 			);
-			path = "Obj C";
+			path = Models;
+			sourceTree = "<group>";
+		};
+		303006EB225D5356007D5381 /* ConversationsList */ = {
+			isa = PBXGroup;
+			children = (
+				3002DC1422240B83009753EF /* ConversationsListViewController.swift */,
+				3002DC1622242253009753EF /* CustomTableViewCell.swift */,
+			);
+			path = ConversationsList;
+			sourceTree = "<group>";
+		};
+		303006EC225D5371007D5381 /* Conversation */ = {
+			isa = PBXGroup;
+			children = (
+				3001799D2225611800E39CBD /* ConversationViewController.swift */,
+				300179A722259C9A00E39CBD /* ConversationCell.swift */,
+			);
+			path = Conversation;
 			sourceTree = "<group>";
 		};
 		309C894E22352C93005C4E57 /* Storyboards */ = {
@@ -161,39 +248,6 @@
 				3070BF7D222FC3A800D584CD /* UserDefaultsColor.swift */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		30DFE8FB2237D10F00757837 /* Managers */ = {
-			isa = PBXGroup;
-			children = (
-				30DFE8FC2237D13A00757837 /* GCDDataManager.swift */,
-				30DFE8FE2237D15300757837 /* OperationDataManager.swift */,
-				30DFE9042238782500757837 /* UserFileManager.swift */,
-				30AC4C2E2238DB62005C4D76 /* DataManager.swift */,
-			);
-			path = Managers;
-			sourceTree = "<group>";
-		};
-		30DFE9002238391500757837 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				3002DC1822247BEB009753EF /* CellModel.swift */,
-				30DFE9022238398C00757837 /* ProfileModel.swift */,
-				305A6E3522417F4C0076DFBA /* MessageModel.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		30DFE9012238393B00757837 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				301EC571220CC520003BEDEF /* ProfileViewController.swift */,
-				30DFE8F92237CC2E00757837 /* EditProfileViewController.swift */,
-				3001799D2225611800E39CBD /* ConversationViewController.swift */,
-				3002DC1422240B83009753EF /* ConversationsListViewController.swift */,
-				3070BF7B222FBDA000D584CD /* ThemesViewControllerSwift.swift */,
-			);
-			path = Controllers;
 			sourceTree = "<group>";
 		};
 		45747736F76BD19EB73568B8 /* Pods */ = {
@@ -332,6 +386,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3002DC1722242253009753EF /* CustomTableViewCell.swift in Sources */,
+				303006E8225D5210007D5381 /* CommunicatorDelegate.swift in Sources */,
 				30AC4C2F2238DB62005C4D76 /* DataManager.swift in Sources */,
 				305A6E34224174C20076DFBA /* CommunicationManager.swift in Sources */,
 				300179A822259C9A00E39CBD /* ConversationCell.swift in Sources */,
@@ -345,6 +400,7 @@
 				30DFE9052238782500757837 /* UserFileManager.swift in Sources */,
 				30DFE9032238398C00757837 /* ProfileModel.swift in Sources */,
 				30DFE8FA2237CC2E00757837 /* EditProfileViewController.swift in Sources */,
+				303006EA225D523A007D5381 /* Communicator.swift in Sources */,
 				3002DC1522240B83009753EF /* ConversationsListViewController.swift in Sources */,
 				3070BF7A222DD73F00D584CD /* Themes.m in Sources */,
 				30C32D1D2219752D003DBC00 /* UIImageView+IBDesignable.swift in Sources */,
@@ -520,7 +576,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ios.FinChat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "FinChat/Obj C/FinChat-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "FinChat/FinChat-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -544,7 +600,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ios.FinChat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "FinChat/Obj C/FinChat-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "FinChat/FinChat-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
