@@ -35,12 +35,17 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
             alertController.dismiss(animated: true, completion: nil)
             self.openCamera()
         }
+        let openCollectionAction = UIAlertAction(title: "Загрузить", style: .default) { (_: UIAlertAction) -> Void in
+            alertController.dismiss(animated: true, completion: nil)
+            self.openCollection()
+        }
         let cancelAction = UIAlertAction(title: "Отмена", style: .cancel) { (_: UIAlertAction) -> Void in
             alertController.dismiss(animated: true, completion: nil)
         }
 
         alertController.addAction(openGalleryAction)
         alertController.addAction(openCameraAction)
+        alertController.addAction(openCollectionAction)
         alertController.addAction(cancelAction)
 
         self.present(alertController, animated: true, completion: nil)
@@ -207,6 +212,12 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
             alert.addAction(okey)
             present(alert, animated: true, completion: nil)
         }
+    }
+    
+    func openCollection() {
+        let collectionView: UIViewController = UIStoryboard(name: "Profile", bundle: nil)
+            .instantiateViewController(withIdentifier: "NavigationCollection") as UIViewController
+        self.present(collectionView, animated: true, completion: nil)
     }
 
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
