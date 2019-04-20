@@ -19,18 +19,18 @@ class ParserManager: ParserManagerProtocol {
             return nil
         }
         
-        guard let dictionary = json as? Dictionary<String, Any?> else {
+        guard let dictionary = json as? [String: Any?] else {
             print("JSON is not a dictionary")
             return nil
         }
         
-        guard let hits = dictionary["hits"] as? Array<Dictionary<String, Any?>> else {
+        guard let hits = dictionary["hits"] as? [[String: Any?]] else {
             print("Dictionary has no [hits]")
             return nil
         }
         
         var parsedData = [String]()
-        for (index,dict) in hits.enumerated() {
+        for (index, dict) in hits.enumerated() {
             guard let link = dict["largeImageURL"] as? String else {
                 print("no [largeImageURL] member in [hits][\(index)]")
                 continue

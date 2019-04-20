@@ -46,8 +46,8 @@ class NetworkManager: NetworkManagerProtocol {
     }
     
     private func dataTask(withURL url: URL, andCompletion completionHandler: @escaping (_ data: Data?, _ error: Error?) -> Void) {
-        let task = session.dataTask(with: url){ (data: Data?, response: URLResponse?, error: Error?) in
-            completionHandler(data,error)
+        let task = session.dataTask(with: url) { (data: Data?, _ response: URLResponse?, error: Error?) in
+            completionHandler(data, error)
         }
         task.resume()
     }
