@@ -18,16 +18,16 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
     
     private var paths = [String]()
     private var images = [UIImage?]()
-    var networkManager: NetworkManagerProtocol
-    var parser: ParserManagerProtocol
+//    var networkManager: NetworkManagerProtocol
+//    var parser: ParserManagerProtocol
     
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.dataSource = self
         collectionView.delegate = self
         
-        networkManager = NetworkManager()
-        parser = ParserManager()
+//        networkManager = NetworkManager()
+//        parser = ParserManager()
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

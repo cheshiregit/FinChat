@@ -20,6 +20,8 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     @IBOutlet var newImageButton: UIButton!
 
     private var dataManager: DataManager = GCDDataManager()
+    
+    private var stateButton: Bool = true
 
     var imagePickerTwo = UIImagePickerController()
 
@@ -95,9 +97,45 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     }
 
     func buttonsEnabled(state: Bool) {
-        gcdButton.isEnabled = state
-        operationButton.isEnabled = state
+        if state != self.stateButton {
+            self.stateButton = state
+            gcdButton.isEnabled = state
+            operationButton.isEnabled = state
+            if !state {
+                gcdButton.alpha = 0.5
+                gcdButton.backgroundColor = UIColor.lightGray
+                operationButton.alpha = 0.5
+                operationButton.backgroundColor = UIColor.lightGray
+            } else {
+                gcdButton.alpha = 1
+                operationButton.alpha = 1
+                animation(state: state)
+            }
+        }
     }
+    
+    
+    func animation(state: Bool) {
+        UIView.animate(withDuration: 0.5, animations: { self.gcdButton.transform = CGAffineTransform(scaleX: 1.15, y: 1.15)
+                                                        self.operationButton.transform = CGAffineTransform(scaleX: 1.15, y: 1.15) },
+                       completion: { _ in
+                        UIView.animate(withDuration: 0.6) {
+                            self.gcdButton.transform = CGAffineTransform.identity
+                            self.operationButton.transform = CGAffineTransform.identity
+                        }
+        })
+        UIView.animate(withDuration: 1.0) {
+            if state == true {
+                self.gcdButton.layer.backgroundColor =  UIColor.yellow.cgColor
+                self.operationButton.layer.backgroundColor =  UIColor.yellow.cgColor
+            } else {
+                self.gcdButton.layer.backgroundColor =  UIColor.lightGray.cgColor
+                self.operationButton.layer.backgroundColor =  UIColor.lightGray.cgColor
+            }
+        }
+    }
+    
+    
 
     func startSaving() {
         activityIndicator.isHidden = false
