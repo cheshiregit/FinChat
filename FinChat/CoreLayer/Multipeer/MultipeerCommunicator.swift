@@ -113,7 +113,7 @@ extension MultipeerCommunicator: MCNearbyServiceBrowserDelegate {
 
     func browser(_ browser: MCNearbyServiceBrowser, foundPeer peerID: MCPeerID, withDiscoveryInfo info: [String: String]?) {
         if let session = self.getSession(displayName: peerID.displayName) {
-            if !session.connectedPeers.contains(peerID) {
+            if !session.connectedPeers.contains(peerID) && peerID.displayName != myPeerID.displayName {
                 browser.invitePeer(peerID, to: session, withContext: nil, timeout: 10)
                 self.delegate?.didFoundUser(userID: peerID.displayName, userName: info?["userName"] ?? "Unidentified user")
             }

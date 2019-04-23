@@ -41,6 +41,13 @@ class ConversationViewController: UIViewController, UITextFieldDelegate {
     var textMessage = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
     
     var sendButtonEnabled = true
+    
+    var titleLabel: UILabel = {
+        let label = UILabel(frame: CGRect(x: 0, y: 0, width: 120, height: 24))
+        label.font = UIFont.systemFont(ofSize: 17.0, weight: .semibold)
+        label.textAlignment = .center
+        return label
+    }()
 
     @IBAction func sendButtonClick(_ sender: Any) {
         sendButtonChangeState(state: false)
@@ -145,10 +152,9 @@ class ConversationViewController: UIViewController, UITextFieldDelegate {
         sendButtonChangeState(state: false, withAnimation: false)
         
         
-        //self.changeUserStatus(status: false)
         self.changeUserStatus(status: true)
-//        let titleLabel = UILabel()
-//        self.navigationItem.titleView = titleLabel.text = conversationTitle
+        self.navigationItem.titleView = titleLabel
+        titleLabel.text = conversationTitle
     }
 
     deinit {
@@ -231,18 +237,19 @@ extension ConversationViewController: ChangeUserState {
         print("Change!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
         if status {
             UIView.animate(withDuration: 1.0) {
-                self.navigationItem.titleView?.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
-                self.navigationItem.titleView?.tintColor = UIColor.green
+                self.titleLabel.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
+                self.titleLabel.textColor = UIColor.green
             }
         } else {
             UIView.animate(withDuration: 1.0) {
-                self.navigationItem.titleView?.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
-                self.navigationItem.titleView?.tintColor = UIColor.black
+                self.titleLabel.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+                self.titleLabel.textColor = UIColor.black
             }
         }
     }
 
     func userOffline(userId: String) {
+        print("USER OFFLINE \(userId) !!!!!!!!!!!!!!!!!!!!")
         if userId == self.idUserTo {
             self.sendMessageButton.isEnabled = false
             self.changeUserStatus(status: false)
