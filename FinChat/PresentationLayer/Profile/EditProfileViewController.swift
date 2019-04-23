@@ -174,7 +174,6 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     }
 
     @objc func keyboardWillShowNotification(_ notification: NSNotification) {
-        print("keyboardWillShow")
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
             let keyboardHeight = keyboardSize.height
             self.view.frame.origin.y = -1.0 * keyboardHeight

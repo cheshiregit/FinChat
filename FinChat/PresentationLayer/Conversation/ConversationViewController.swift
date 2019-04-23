@@ -39,24 +39,22 @@ class ConversationViewController: UIViewController, UITextFieldDelegate {
     weak var delegate: ConversationsListDelegate?
 
     var textMessage = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    
+    var sendButtonEnabled = true
 
     @IBAction func sendButtonClick(_ sender: Any) {
-        if messageTextField.text == "" {
-            print("Введите сообщение")
-        } else {
-            self.communicationManager?.communicator?.sendMessage(string: self.messageTextField.text!,
-                                                                 to: idUserTo!,
-                                                                 completionHandler: { success, _ in
-                if success {
-                    self.sendMessage(text: self.messageTextField.text!)
-                } else {
-                    print("error")
-                }
-            })
-
-        }
+        sendButtonChangeState(state: false)
+        self.communicationManager?.communicator?.sendMessage(string: self.messageTextField.text!,
+                                                             to: idUserTo!,
+                                                             completionHandler: { success, _ in
+                                                                if success {
+                                                                    self.sendMessage(text: self.messageTextField.text!)
+                                                                } else {
+                                                                    print("error")
+                                                                }
+        })
     }
-
+    
     func sendMessage(text: String) {
         let message = MessageModel(text: text, isIncoming: false)
 
@@ -73,6 +71,48 @@ class ConversationViewController: UIViewController, UITextFieldDelegate {
             self.conversationTableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
         }
     }
+    
+    func sendButtonChangeState(state: Bool, withAnimation: Bool = true) {
+        if sendButtonEnabled != state {
+            sendButtonEnabled = state
+            self.sendMessageButton.isEnabled = state
+            if !state {
+//                self.sendMessageButton.alpha = 0.7
+                self.sendMessageButton.tintColor = UIColor.white
+                if withAnimation {
+                    animation(state: state)
+                }
+            } else {
+//                self.sendMessageButton.alpha = 1
+                self.sendMessageButton.tintColor = UIColor.blue
+                animation(state: state)
+            }
+        }
+    }
+    
+    func animation(state: Bool) {
+        UIView.animate(withDuration: 0.5, animations: { self.sendMessageButton.transform = CGAffineTransform(scaleX: 1.15, y: 1.15) },
+                       completion: { _ in
+                        UIView.animate(withDuration: 0.6) {
+                            self.sendMessageButton.transform = CGAffineTransform.identity
+                        }
+        })
+        UIView.animate(withDuration: 1.0) {
+            if state == true {
+                self.sendMessageButton.layer.backgroundColor =  UIColor.clear.cgColor
+            } else {
+                self.sendMessageButton.layer.backgroundColor =  UIColor.lightGray.cgColor
+            }
+        }
+    }
+    
+    @objc func textFieldEdited() {
+        if !messageTextField.text!.isEmpty {
+            sendButtonChangeState(state: true)
+        } else {
+            sendButtonChangeState(state: false)
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -87,6 +127,8 @@ class ConversationViewController: UIViewController, UITextFieldDelegate {
         self.messageTextField.delegate = self
         self.communicationManager?.conversationDelegate = self
         //
+        NotificationCenter.default.addObserver(self, selector: #selector(textFieldEdited),
+                                               name: UITextField.textDidChangeNotification, object: messageTextField)
         let notifier = NotificationCenter.default
         notifier.addObserver(self,
                              selector: #selector(EditProfileViewController.keyboardWillShowNotification(_:)),
@@ -100,6 +142,13 @@ class ConversationViewController: UIViewController, UITextFieldDelegate {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard (_:)))
         self.view.addGestureRecognizer(tapGesture)
         messageTextField.delegate = self
+        sendButtonChangeState(state: false, withAnimation: false)
+        
+        
+        //self.changeUserStatus(status: false)
+        self.changeUserStatus(status: true)
+//        let titleLabel = UILabel()
+//        self.navigationItem.titleView = titleLabel.text = conversationTitle
     }
 
     deinit {
@@ -177,16 +226,33 @@ extension ConversationViewController: ConversationDelegate {
 }
 
 extension ConversationViewController: ChangeUserState {
+    
+    func changeUserStatus(status: Bool) {
+        print("Change!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+        if status {
+            UIView.animate(withDuration: 1.0) {
+                self.navigationItem.titleView?.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
+                self.navigationItem.titleView?.tintColor = UIColor.green
+            }
+        } else {
+            UIView.animate(withDuration: 1.0) {
+                self.navigationItem.titleView?.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+                self.navigationItem.titleView?.tintColor = UIColor.black
+            }
+        }
+    }
 
     func userOffline(userId: String) {
         if userId == self.idUserTo {
             self.sendMessageButton.isEnabled = false
+            self.changeUserStatus(status: false)
         }
     }
 
     func userOnline(userId: String) {
         if userId == self.idUserTo {
             self.sendMessageButton.isEnabled = true
+            self.changeUserStatus(status: true)
         }
     }
 
